@@ -75,6 +75,40 @@
     videoEl.addEventListener("ended", cancelVideo);
   }
 
+  /* Destinos carousel */
+  const destinosCarousel = document.getElementById("destinos-carousel");
+  const destinosNavBtns = document.querySelectorAll(".destinos-nav__btn");
+
+  if (destinosCarousel && destinosNavBtns.length) {
+    const getStep = () => {
+      const track = destinosCarousel.querySelector(".destinos-track");
+      const card = destinosCarousel.querySelector(".destino-card");
+      if (!track || !card) return 320;
+      const gap = parseFloat(getComputedStyle(track).columnGap || "0") || 0;
+      return card.getBoundingClientRect().width + gap;
+    };
+
+    const updateNavState = () => {
+      const max = destinosCarousel.scrollWidth - destinosCarousel.clientWidth - 1;
+      destinosNavBtns.forEach((btn) => {
+        const dir = Number(btn.dataset.destinosDir);
+        if (dir < 0) btn.disabled = destinosCarousel.scrollLeft <= 0;
+        if (dir > 0) btn.disabled = destinosCarousel.scrollLeft >= max;
+      });
+    };
+
+    destinosNavBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const dir = Number(btn.dataset.destinosDir);
+        destinosCarousel.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+      });
+    });
+
+    destinosCarousel.addEventListener("scroll", updateNavState, { passive: true });
+    window.addEventListener("resize", updateNavState);
+    updateNavState();
+  }
+
   /* FAQ accordion */
   document.querySelectorAll(".accordion__trigger").forEach((trigger) => {
     trigger.addEventListener("click", () => {

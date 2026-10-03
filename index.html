@@ -98,6 +98,9 @@
     <div class="hero__bg" aria-hidden="true">
       <img src="assets/img/hero-bg-v2.jpg" alt="" loading="eager">
     </div>
+    <div class="hero__polaroid" aria-hidden="true">
+      <img src="assets/img/POLAROID V2.png" alt="" loading="eager">
+    </div>
     <div class="container">
       <div class="hero__content reveal">
         <p class="eyebrow eyebrow--light">Agencia de viajes · Merlo, Buenos Aires</p>
@@ -286,7 +289,7 @@
         </a>
       </div>
       <div class="visa__media reveal">
-        <img src="assets/img/visa.png" alt="Visa de Estados Unidos aprobada, junto a la bandera estadounidense" class="visa__photo">
+        <img src="assets/img/aproved 2.png" alt="Visa de Estados Unidos aprobada, junto a la bandera estadounidense" class="visa__photo">
       </div>
     </div>
   </section>
@@ -294,73 +297,133 @@
   <!-- ======================= 5. DESTINOS ======================= -->
   <section class="section" id="destinos">
     <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Destinos y propuestas destacadas</p>
-        <h2 class="section-title">Algunos de los destinos que más elijen mis pasajeros.</h2>
-        <p class="section-lead">
-          Esta es solo una muestra. Si tenés un destino en mente que no está acá, contame tu idea y
-          lo armamos juntas.
-        </p>
+      <div class="destinos-head">
+        <div class="section-head reveal">
+          <p class="eyebrow">Destinos y propuestas destacadas</p>
+          <h2 class="section-title">Algunos de los destinos que más elijen mis pasajeros.</h2>
+          <p class="section-lead">
+            Esta es solo una muestra. Si tenés un destino en mente que no está acá, contame tu idea y
+            lo armamos juntas.
+          </p>
+        </div>
+        <div class="destinos-nav">
+          <button type="button" class="destinos-nav__btn" data-destinos-dir="-1" aria-label="Ver destino anterior">
+            <i class="ph ph-arrow-left"></i>
+          </button>
+          <button type="button" class="destinos-nav__btn" data-destinos-dir="1" aria-label="Ver destino siguiente">
+            <i class="ph ph-arrow-right"></i>
+          </button>
+        </div>
       </div>
+    </div>
 
-      <div class="destinos-grid">
-        <a class="destino-card destino-card--wide reveal"
+    <div class="destinos-carousel" id="destinos-carousel">
+      <div class="destinos-track">
+        <a class="destino-card reveal"
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20a%20Bariloche%2Fesqu%C3%AD"
            target="_blank" rel="noopener">
-          <img src="assets/img/destinos/bariloche.jpg" alt="Nieve en Bariloche" loading="lazy">
-          <div class="destino-card__overlay">
-            <h3>Bariloche y nieve</h3>
-            <p>Viajes de esquí en Argentina y el exterior</p>
+          <div class="destino-card__bg">
+            <img src="assets/img/destinos/bariloche.jpg" alt="Nieve en Bariloche" loading="lazy">
+          </div>
+          <div class="destino-card__content">
+            <span class="destino-card__tag">Nieve</span>
+            <div class="destino-card__bottom">
+              <div class="destino-card__text">
+                <h3>Nieve</h3>
+                <p>Viajes de esquí en Argentina y el exterior</p>
+              </div>
+              <span class="destino-card__arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+            </div>
           </div>
         </a>
 
         <a class="destino-card reveal"
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20el%20Caribe%20all%20inclusive"
            target="_blank" rel="noopener">
-          <img src="assets/img/destinos/caribe.jpg" alt="Playa de Punta Cana, Caribe" loading="lazy">
-          <div class="destino-card__overlay">
-            <h3>Caribe all inclusive</h3>
-            <p>Playas y resorts todo incluido</p>
+          <div class="destino-card__bg">
+            <img src="assets/img/destinos/caribe.jpg" alt="Playa de Punta Cana, Caribe" loading="lazy">
+          </div>
+          <div class="destino-card__content">
+            <span class="destino-card__tag">Playas</span>
+            <div class="destino-card__bottom">
+              <div class="destino-card__text">
+                <h3>Caribe all inclusive</h3>
+                <p>Playas y resorts todo incluido</p>
+              </div>
+              <span class="destino-card__arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+            </div>
           </div>
         </a>
 
         <a class="destino-card reveal"
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20crucero"
            target="_blank" rel="noopener">
-          <img src="assets/img/destinos/crucero.jpg" alt="Atardecer desde un crucero" loading="lazy">
-          <div class="destino-card__overlay">
-            <h3>Cruceros</h3>
-            <p>Itinerarios por el Caribe y más</p>
+          <div class="destino-card__bg">
+            <img src="assets/img/destinos/crucero.jpg" alt="Atardecer desde un crucero" loading="lazy">
+          </div>
+          <div class="destino-card__content">
+            <span class="destino-card__tag">Cruceros</span>
+            <div class="destino-card__bottom">
+              <div class="destino-card__text">
+                <h3>Cruceros</h3>
+                <p>Itinerarios por el Caribe y más</p>
+              </div>
+              <span class="destino-card__arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+            </div>
           </div>
         </a>
 
         <a class="destino-card reveal"
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20Miami%20y%20Orlando"
            target="_blank" rel="noopener">
-          <img src="assets/img/destinos/miami.jpg" alt="Skyline de Miami" loading="lazy">
-          <div class="destino-card__overlay">
-            <h3>Miami y Orlando</h3>
-            <p>Incluyendo parques temáticos</p>
+          <div class="destino-card__bg">
+            <img src="assets/img/destinos/miami.jpg" alt="Skyline de Miami" loading="lazy">
+          </div>
+          <div class="destino-card__content">
+            <span class="destino-card__tag">Ciudad</span>
+            <div class="destino-card__bottom">
+              <div class="destino-card__text">
+                <h3>Miami y Orlando</h3>
+                <p>Incluyendo parques temáticos</p>
+              </div>
+              <span class="destino-card__arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+            </div>
           </div>
         </a>
 
         <a class="destino-card reveal"
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20a%20Brasil"
            target="_blank" rel="noopener">
-          <img src="assets/img/destinos/brasil.jpg" alt="Atardecer en Ipanema, Río de Janeiro" loading="lazy">
-          <div class="destino-card__overlay">
-            <h3>Brasil</h3>
-            <p>Playas y circuitos</p>
+          <div class="destino-card__bg">
+            <img src="assets/img/destinos/brasil.jpg" alt="Atardecer en Ipanema, Río de Janeiro" loading="lazy">
+          </div>
+          <div class="destino-card__content">
+            <span class="destino-card__tag">Playas</span>
+            <div class="destino-card__bottom">
+              <div class="destino-card__text">
+                <h3>Brasil</h3>
+                <p>Playas y circuitos</p>
+              </div>
+              <span class="destino-card__arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+            </div>
           </div>
         </a>
 
         <a class="destino-card reveal"
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20nacional"
            target="_blank" rel="noopener">
-          <img src="assets/img/destinos/argentina.jpg" alt="Obelisco de Buenos Aires" loading="lazy">
-          <div class="destino-card__overlay">
-            <h3>Destinos nacionales</h3>
-            <p>Argentina, a medida</p>
+          <div class="destino-card__bg">
+            <img src="assets/img/destinos/argentina.jpg" alt="Obelisco de Buenos Aires" loading="lazy">
+          </div>
+          <div class="destino-card__content">
+            <span class="destino-card__tag">Argentina</span>
+            <div class="destino-card__bottom">
+              <div class="destino-card__text">
+                <h3>Destinos nacionales</h3>
+                <p>Argentina, a medida</p>
+              </div>
+              <span class="destino-card__arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+            </div>
           </div>
         </a>
       </div>
@@ -381,6 +444,14 @@
 
       <div class="process">
         <div class="process__track" aria-hidden="true">
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
           <span class="process__dot"></span>
           <span class="process__dot"></span>
           <span class="process__dot"></span>
@@ -423,18 +494,22 @@
 
   <!-- ======================= 7. RESEÑAS ======================= -->
   <section class="section" id="resenas">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Reseñas</p>
-        <h2 class="section-title">Lo que cuentan quienes ya viajaron conmigo.</h2>
-        <p class="section-lead">
-          Testimonios reales de pasajeros, compartidos por WhatsApp y Facebook, publicados con su
-          autorización.
-        </p>
-      </div>
+    <div class="resenas__media reveal">
+      <img src="assets/img/estatua libertad.png" alt="" class="resenas__decor" loading="lazy">
+    </div>
+    <div class="container resenas__layout">
+      <div class="resenas__content">
+        <div class="section-head reveal">
+          <p class="eyebrow">Reseñas</p>
+          <h2 class="section-title">Lo que cuentan quienes ya viajaron conmigo.</h2>
+          <p class="section-lead">
+            Testimonios reales de pasajeros, compartidos por WhatsApp y Facebook, publicados con su
+            autorización.
+          </p>
+        </div>
 
-      <div class="testimonials-carousel reveal">
-        <div class="testimonials-track">
+        <div class="testimonials-carousel reveal">
+          <div class="testimonials-track">
           <blockquote class="testimonial-card">
             <i class="ph-fill ph-quotes testimonial-card__icon"></i>
             <p class="testimonial-card__text">Espacio reservado para un testimonio real de un pasajero, a incorporar con su autorización.</p>
@@ -465,6 +540,7 @@
             <p class="testimonial-card__text">Espacio reservado para un testimonio real de un pasajero, a incorporar con su autorización.</p>
             <footer>— Nombre del pasajero, destino del viaje</footer>
           </blockquote>
+          </div>
         </div>
       </div>
     </div>
@@ -579,7 +655,7 @@
             <i class="ph ph-instagram-logo"></i>
             <div>
               <strong>Instagram</strong>
-              <a href="https://instagram.com/pasaportear.viajes" target="_blank" rel="noopener">@pasaportear.viajes</a>
+              <a href="https://www.instagram.com/pasaportear/" target="_blank" rel="noopener">@pasaportear</a>
             </div>
           </li>
           <li>
@@ -593,7 +669,7 @@
             <i class="ph ph-identification-badge"></i>
             <div>
               <strong>Legajo</strong>
-              <span>N.º a confirmar</span>
+              <span>N.º 20532</span>
             </div>
           </li>
         </ul>
@@ -647,13 +723,14 @@
       </ul>
     </nav>
     <div class="site-footer__social">
-      <a href="https://instagram.com/pasaportear.viajes" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+      <a href="https://www.instagram.com/pasaportear/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
       <a href="https://wa.me/5491130934595" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
       <a href="mailto:hola@pasaportear.com.ar" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
     </div>
   </div>
   <div class="container site-footer__bottom">
-    <p>&copy; <span id="year"></span> Pasaportear Viajes — Belén García. Legajo N.º a confirmar.</p>
+    <p>&copy; <span id="year"></span> Pasaportear Viajes — Belén García. Legajo N.º 20532.</p>
+    <p class="site-footer__credit">Creada por <a href="https://crimses.com" target="_blank" rel="noopener">CRIMSES</a></p>
   </div>
 </footer>
 
