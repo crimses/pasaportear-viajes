@@ -559,7 +559,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: var(--space-2);
   transition: transform var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out);
 }
-.video-divider__play i { margin-left: 4px; position: relative; z-index: 1; }
+.video-divider__play i { display: block; line-height: 1; margin-left: -1px; position: relative; z-index: 1; }
 .video-divider__play:hover,
 .video-divider__play:focus-visible {
   background: var(--turquoise);
