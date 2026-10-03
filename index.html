@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasaportear Viajes — Agencia de viajes personalizada | Belén García</title>
+<meta name="description" content="Agencia de viajes a cargo de Belén García, Lic. en Turismo. Paquetes, itinerarios a medida, asesoramiento de Visa USA y acompañamiento personal antes, durante y después de tu viaje. Con base en Merlo, Buenos Aires.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+<!-- Fonts: preload self-hosted woff2 -->
+<link rel="preload" href="assets/fonts/league-spartan-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/glacial-indifference-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Phosphor Icons (no-build CDN, official integration) -->
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" as="style"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+<!-- ======================= HEADER ======================= -->
+<header class="site-header" id="site-header">
+  <div class="container site-header__row">
+    <a href="#inicio" class="site-header__brand" aria-label="Pasaportear Viajes - inicio">
+      <img src="assets/img/logo-horizontal-trimmed.png" alt="Pasaportear Viajes" class="site-header__logo">
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+      <ul class="main-nav__list">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#visa-usa">Visa USA</a></li>
+        <li><a href="#destinos">Destinos</a></li>
+        <li><a href="#resenas">Reseñas</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje"
+         class="btn btn--whatsapp btn--sm" target="_blank" rel="noopener">
+        <i class="ph-fill ph-whatsapp-logo"></i> WhatsApp
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Floating WhatsApp (mobile persistent) -->
+<a href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+  <i class="ph-fill ph-whatsapp-logo"></i>
+</a>
+
+<main id="inicio">
+
+  <!-- Definiciones SVG reutilizables (bordes ondulados) -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <defs>
+      <clipPath id="hero-wave-bottom" clipPathUnits="objectBoundingBox">
+        <path d="M0,0
+          L1,0
+          L1,0.965
+          C0.8625,0.965 0.8875,1 0.75,1
+          C0.6125,1 0.6375,0.965 0.5,0.965
+          C0.3625,0.965 0.3875,1 0.25,1
+          C0.1125,1 0.1375,0.965 0,0.965
+          Z" />
+      </clipPath>
+      <clipPath id="video-divider-wave" clipPathUnits="objectBoundingBox">
+        <path d="M0,0.035
+          C0.1375,0.035 0.1125,0 0.25,0
+          C0.3875,0 0.3625,0.035 0.5,0.035
+          C0.6375,0.035 0.6125,0 0.75,0
+          C0.8875,0 0.8625,0.035 1,0.035
+          L1,0.965
+          C0.8625,0.965 0.8875,1 0.75,1
+          C0.6125,1 0.6375,0.965 0.5,0.965
+          C0.3625,0.965 0.3875,1 0.25,1
+          C0.1125,1 0.1375,0.965 0,0.965
+          Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <!-- ======================= 1. INICIO / HERO ======================= -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="assets/img/hero-bg-v2.jpg" alt="" loading="eager">
+    </div>
+    <div class="container">
+      <div class="hero__content reveal">
+        <p class="eyebrow eyebrow--light">Agencia de viajes · Merlo, Buenos Aires</p>
+        <h1 class="hero__title">Organizamos tu viaje con la atención que te merecés, de principio a fin.</h1>
+        <p class="hero__lead">
+          Soy Belén García, Licenciada en Turismo, y estoy al frente de cada consulta, cada propuesta
+          y cada viaje que organizo. En Pasaportear no hablás con un call center: hablás conmigo.
+        </p>
+        <div class="hero__actions">
+          <a href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje"
+             class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo"></i> Consultar por WhatsApp
+          </a>
+          <a href="#servicios" class="btn btn--ghost-light btn--lg">Ver servicios</a>
+        </div>
+        <ul class="hero__trust">
+          <li><i class="ph ph-graduation-cap"></i> Lic. en Turismo (UM)</li>
+          <li><i class="ph ph-phone-call"></i> Teléfono de guardia en destino</li>
+          <li><i class="ph ph-map-pin"></i> Agencia argentina, con base en Merlo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 2. SOBRE MÍ ======================= -->
+  <section class="section" id="sobre-mi">
+    <div class="container about__grid">
+      <div class="about__media reveal">
+        <img src="assets/img/belen-hero.png" alt="Belén García en el día de su graduación como Licenciada en Turismo" class="about__photo">
+      </div>
+
+      <div class="about__content reveal">
+        <p class="eyebrow">Sobre mí y Pasaportear</p>
+        <h2 class="section-title">Una vocación que empezó escuchando historias de viajes ajenos.</h2>
+        <p>
+          Mi vocación nació al escuchar las experiencias de una persona cercana que trabajaba en
+          hotelería. Eso me llevó a investigar la carrera de Turismo y a descubrir que combina
+          planificación, conocimiento y, sobre todo, acompañamiento a las personas.
+        </p>
+        <p>
+          Empecé mis estudios en 2014. Por motivos laborales y económicos tuve que interrumpir la
+          carrera en distintas oportunidades, pero con esfuerzo, constancia y el apoyo de mi familia,
+          amigos y colegas, obtuve mi título en noviembre de 2024. Ese recorrido fortaleció mi
+          convicción de que organizar un viaje requiere formación, responsabilidad y compromiso con
+          quienes confían en una profesional.
+        </p>
+        <p>
+          De esa forma de entender mi trabajo nace <strong>Pasaportear Viajes</strong>. El nombre
+          incorpora el <strong>“AR”</strong> como expresión de identidad argentina: PasaporteAR.
+          Creé la agencia para ofrecer viajes pensados para cada persona, con asesoramiento
+          profesional y atención directa conmigo, antes, durante y después del viaje.
+        </p>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__year">2014</span>
+            <span class="timeline__text">Comienzo mis estudios de Turismo.</span>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__year">2016</span>
+            <span class="timeline__text">Empiezo a trabajar en el sector turístico.</span>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__year">2024</span>
+            <span class="timeline__text">Me recibo de Licenciada en Turismo (Universidad de Morón) y nace Pasaportear Viajes.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-divider reveal" id="video-divider" aria-label="Video de Pasaportear Viajes">
+    <div class="video-divider__media">
+      <img src="assets/img/hero-bg.jpg" alt="" class="video-divider__poster">
+    </div>
+    <div class="video-divider__overlay">
+      <button type="button" class="video-divider__play" id="video-divider-play" aria-label="Reproducir video">
+        <i class="ph-fill ph-play"></i>
+      </button>
+      <h2 class="video-divider__title">Así se siente viajar</h2>
+      <p class="video-divider__subtitle">Un viaje es la única compra que te hace más rico.</p>
+    </div>
+    <video class="video-divider__video" id="video-divider-video" playsinline preload="none"
+           poster="assets/img/hero-bg.jpg">
+      <source src="assets/video/sobre-mi-servicios.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- ======================= 3. SERVICIOS ======================= -->
+  <section class="section section--alt" id="servicios">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Servicios</p>
+        <h2 class="section-title">Me ocupo de cada detalle de tu viaje.</h2>
+        <p class="section-lead">
+          Organizo viajes nacionales e internacionales, tanto paquetes como itinerarios
+          personalizados. Gestiono todo lo necesario para que vos solo tengas que viajar.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <i class="ph ph-suitcase-rolling service-card__icon"></i>
+          <h3>Itinerarios a medida</h3>
+          <p>Viajes diseñados según lo que buscás: tu presupuesto, tus tiempos y tu estilo de viaje.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-package service-card__icon"></i>
+          <h3>Paquetes y salidas grupales</h3>
+          <p>Propuestas cerradas y salidas grupales para viajar acompañado, a buen precio.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-airplane-tilt service-card__icon"></i>
+          <h3>Vuelos</h3>
+          <p>Búsqueda y emisión de vuelos nacionales e internacionales, según tu itinerario.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-bed service-card__icon"></i>
+          <h3>Alojamiento</h3>
+          <p>Hoteles, resorts y all inclusive, elegidos según la zona y la experiencia que buscás.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-car service-card__icon"></i>
+          <h3>Traslados</h3>
+          <p>Transfers aeropuerto-hotel y movilidad coordinada en destino.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-map-trifold service-card__icon"></i>
+          <h3>Excursiones</h3>
+          <p>Actividades y paseos para conocer cada destino a fondo.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-anchor service-card__icon"></i>
+          <h3>Cruceros</h3>
+          <p>Asesoramiento y reserva de cruceros por el Caribe y otros destinos.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-person-simple-ski service-card__icon"></i>
+          <h3>Viajes de esquí</h3>
+          <p>Escapadas a la nieve, en Argentina y en el exterior.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-ferris-wheel service-card__icon"></i>
+          <h3>Parques temáticos</h3>
+          <p>Entradas y combos para Orlando y otros destinos con parques.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-first-aid-kit service-card__icon"></i>
+          <h3>Asistencia al viajero</h3>
+          <p>Asistencia médica y al viajero, para que viajes tranquilo.</p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-identification-card service-card__icon"></i>
+          <h3>Visa de Estados Unidos</h3>
+          <p>Asesoramiento completo para tu trámite. <a href="#visa-usa">Ver más →</a></p>
+        </article>
+        <article class="service-card reveal">
+          <i class="ph ph-puzzle-piece service-card__icon"></i>
+          <h3>Servicios independientes</h3>
+          <p>¿Ya tenés algo armado y te falta una parte? También contrato servicios sueltos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 4. VISA USA ======================= -->
+  <section class="visa" id="visa-usa">
+    <div class="container visa__grid">
+      <div class="visa__content reveal">
+        <p class="eyebrow eyebrow--light">Visa USA</p>
+        <h2 class="section-title section-title--light">Te acompaño en todo el trámite de tu Visa americana.</h2>
+        <p class="visa__lead">
+          Sé que el proceso puede resultar confuso. Por eso te asesoro paso a paso, para que llegues
+          a tu turno con todo resuelto y la documentación en orden.
+        </p>
+        <ul class="check-list">
+          <li><i class="ph-fill ph-check-circle"></i> Asistencia con el formulario DS-160</li>
+          <li><i class="ph-fill ph-check-circle"></i> Coordinación de turnos</li>
+          <li><i class="ph-fill ph-check-circle"></i> Revisión de la documentación necesaria</li>
+          <li><i class="ph-fill ph-check-circle"></i> Ayuda para completar formularios</li>
+          <li><i class="ph-fill ph-check-circle"></i> Check-in de ida y vuelta</li>
+        </ul>
+        <a href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20la%20Visa%20de%20Estados%20Unidos"
+           class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener">
+          <i class="ph-fill ph-whatsapp-logo"></i> Consultar por mi Visa
+        </a>
+      </div>
+      <div class="visa__media reveal">
+        <img src="assets/img/visa.png" alt="Visa de Estados Unidos aprobada, junto a la bandera estadounidense" class="visa__photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 5. DESTINOS ======================= -->
+  <section class="section" id="destinos">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Destinos y propuestas destacadas</p>
+        <h2 class="section-title">Algunos de los destinos que más elijen mis pasajeros.</h2>
+        <p class="section-lead">
+          Esta es solo una muestra. Si tenés un destino en mente que no está acá, contame tu idea y
+          lo armamos juntas.
+        </p>
+      </div>
+
+      <div class="destinos-grid">
+        <a class="destino-card destino-card--wide reveal"
+           href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20a%20Bariloche%2Fesqu%C3%AD"
+           target="_blank" rel="noopener">
+          <img src="assets/img/destinos/bariloche.jpg" alt="Nieve en Bariloche" loading="lazy">
+          <div class="destino-card__overlay">
+            <h3>Bariloche y nieve</h3>
+            <p>Viajes de esquí en Argentina y el exterior</p>
+          </div>
+        </a>
+
+        <a class="destino-card reveal"
+           href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20el%20Caribe%20all%20inclusive"
+           target="_blank" rel="noopener">
+          <img src="assets/img/destinos/caribe.jpg" alt="Playa de Punta Cana, Caribe" loading="lazy">
+          <div class="destino-card__overlay">
+            <h3>Caribe all inclusive</h3>
+            <p>Playas y resorts todo incluido</p>
+          </div>
+        </a>
+
+        <a class="destino-card reveal"
+           href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20crucero"
+           target="_blank" rel="noopener">
+          <img src="assets/img/destinos/crucero.jpg" alt="Atardecer desde un crucero" loading="lazy">
+          <div class="destino-card__overlay">
+            <h3>Cruceros</h3>
+            <p>Itinerarios por el Caribe y más</p>
+          </div>
+        </a>
+
+        <a class="destino-card reveal"
+           href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20Miami%20y%20Orlando"
+           target="_blank" rel="noopener">
+          <img src="assets/img/destinos/miami.jpg" alt="Skyline de Miami" loading="lazy">
+          <div class="destino-card__overlay">
+            <h3>Miami y Orlando</h3>
+            <p>Incluyendo parques temáticos</p>
+          </div>
+        </a>
+
+        <a class="destino-card reveal"
+           href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20a%20Brasil"
+           target="_blank" rel="noopener">
+          <img src="assets/img/destinos/brasil.jpg" alt="Atardecer en Ipanema, Río de Janeiro" loading="lazy">
+          <div class="destino-card__overlay">
+            <h3>Brasil</h3>
+            <p>Playas y circuitos</p>
+          </div>
+        </a>
+
+        <a class="destino-card reveal"
+           href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20nacional"
+           target="_blank" rel="noopener">
+          <img src="assets/img/destinos/argentina.jpg" alt="Obelisco de Buenos Aires" loading="lazy">
+          <div class="destino-card__overlay">
+            <h3>Destinos nacionales</h3>
+            <p>Argentina, a medida</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 6. ACOMPAÑAMIENTO ======================= -->
+  <section class="section section--alt" id="acompanamiento">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Acompañamiento al pasajero</p>
+        <h2 class="section-title">No desaparezco cuando confirmás el viaje.</h2>
+        <p class="section-lead">
+          Conozco tu itinerario, tus necesidades y los servicios contratados. Si surge un
+          imprevisto, podés llamarme y vas a encontrar a alguien que conoce tu caso.
+        </p>
+      </div>
+
+      <div class="process">
+        <div class="process__track" aria-hidden="true">
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <span class="process__dot"></span>
+          <i class="ph-fill ph-airplane-tilt process__plane"></i>
+        </div>
+        <div class="process__step reveal" data-step="1">
+          <span class="process__num">01</span>
+          <h3>Antes del viaje</h3>
+          <p>Armamos juntas la propuesta, resolvemos dudas y dejamos toda la documentación en orden.</p>
+        </div>
+        <div class="process__step reveal" data-step="2">
+          <span class="process__num">02</span>
+          <h3>Durante el viaje</h3>
+          <p>Tenés un teléfono de guardia para contactarme ante cualquier imprevisto en destino.</p>
+        </div>
+        <div class="process__step reveal" data-step="3">
+          <span class="process__num">03</span>
+          <h3>Después del viaje</h3>
+          <p>Me interesa saber cómo viviste tu experiencia, y quedo disponible para el próximo viaje.</p>
+        </div>
+      </div>
+
+      <div class="guard-banner reveal">
+        <i class="ph-fill ph-phone-call guard-banner__icon"></i>
+        <div class="guard-banner__text">
+          <h3>¿Ya estás viajando y necesitás ayuda?</h3>
+          <p>El teléfono de guardia es exclusivo para pasajeros en destino ante una urgencia o imprevisto.</p>
+        </div>
+        <a href="tel:+5491100000001" class="btn btn--petrol btn--md">
+          <i class="ph ph-phone"></i> Línea de guardia
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 7. RESEÑAS ======================= -->
+  <section class="section" id="resenas">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Reseñas</p>
+        <h2 class="section-title">Lo que cuentan quienes ya viajaron conmigo.</h2>
+        <p class="section-lead">
+          Testimonios reales de pasajeros, compartidos por WhatsApp y Facebook, publicados con su
+          autorización.
+        </p>
+      </div>
+
+      <div class="testimonials-carousel reveal">
+        <div class="testimonials-track">
+          <blockquote class="testimonial-card">
+            <i class="ph-fill ph-quotes testimonial-card__icon"></i>
+            <p class="testimonial-card__text">Espacio reservado para un testimonio real de un pasajero, a incorporar con su autorización.</p>
+            <footer>— Nombre del pasajero, destino del viaje</footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <i class="ph-fill ph-quotes testimonial-card__icon"></i>
+            <p class="testimonial-card__text">Espacio reservado para un testimonio real de un pasajero, a incorporar con su autorización.</p>
+            <footer>— Nombre del pasajero, destino del viaje</footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <i class="ph-fill ph-quotes testimonial-card__icon"></i>
+            <p class="testimonial-card__text">Espacio reservado para un testimonio real de un pasajero, a incorporar con su autorización.</p>
+            <footer>— Nombre del pasajero, destino del viaje</footer>
+          </blockquote>
+          <blockquote class="testimonial-card" aria-hidden="true">
+            <i class="ph-fill ph-quotes testimonial-card__icon"></i>
+            <p class="testimonial-card__text">Espacio reservado para un testimonio real de un pasajero, a incorporar con su autorización.</p>
+            <footer>— Nombre del pasajero, destino del viaje</footer>
+          </blockquote>
+          <blockquote class="testimonial-card" aria-hidden="true">
+            <i class="ph-fill ph-quotes testimonial-card__icon"></i>
+            <p class="testimonial-card__text">Espacio reservado para un testimonio real de un pasajero, a incorporar con su autorización.</p>
+            <footer>— Nombre del pasajero, destino del viaje</footer>
+          </blockquote>
+          <blockquote class="testimonial-card" aria-hidden="true">
+            <i class="ph-fill ph-quotes testimonial-card__icon"></i>
+            <p class="testimonial-card__text">Espacio reservado para un testimonio real de un pasajero, a incorporar con su autorización.</p>
+            <footer>— Nombre del pasajero, destino del viaje</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 8. FAQ ======================= -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="faq__layout">
+        <div class="faq__content">
+          <div class="section-head reveal">
+            <p class="eyebrow">Preguntas frecuentes</p>
+            <h2 class="section-title">Dudas comunes antes de escribirme.</h2>
+          </div>
+
+          <div class="accordion">
+            <div class="accordion__item reveal">
+              <button class="accordion__trigger" aria-expanded="false">
+                <span>¿Cómo empiezo a planificar mi viaje con Pasaportear?</span>
+                <i class="ph ph-plus accordion__icon"></i>
+              </button>
+              <div class="accordion__panel">
+                <p>Me escribís por WhatsApp contándome tu idea: destino, fechas tentativas, cantidad de personas y presupuesto. A partir de ahí te armo una propuesta personalizada.</p>
+              </div>
+            </div>
+            <div class="accordion__item reveal">
+              <button class="accordion__trigger" aria-expanded="false">
+                <span>¿Cuál es la diferencia entre el WhatsApp de consultas y el teléfono de guardia?</span>
+                <i class="ph ph-plus accordion__icon"></i>
+              </button>
+              <div class="accordion__panel">
+                <p>El WhatsApp de consultas es para planificar tu viaje, pedir presupuestos y resolver dudas antes de viajar. El teléfono de guardia es exclusivo para pasajeros que ya están de viaje y tienen una urgencia o imprevisto en destino.</p>
+              </div>
+            </div>
+            <div class="accordion__item reveal">
+              <button class="accordion__trigger" aria-expanded="false">
+                <span>¿Puedo armar un viaje a medida o solo ofrecés paquetes cerrados?</span>
+                <i class="ph ph-plus accordion__icon"></i>
+              </button>
+              <div class="accordion__panel">
+                <p>Las dos opciones. Trabajo paquetes y salidas grupales, pero también armo itinerarios personalizados según lo que busques.</p>
+              </div>
+            </div>
+            <div class="accordion__item reveal">
+              <button class="accordion__trigger" aria-expanded="false">
+                <span>¿Me ayudás si necesito tramitar la Visa de Estados Unidos?</span>
+                <i class="ph ph-plus accordion__icon"></i>
+              </button>
+              <div class="accordion__panel">
+                <p>Sí. Te asesoro con el formulario DS-160, la coordinación del turno y la revisión de la documentación necesaria. <a href="#visa-usa">Conocé más acá</a>.</p>
+              </div>
+            </div>
+            <div class="accordion__item reveal">
+              <button class="accordion__trigger" aria-expanded="false">
+                <span>¿Puedo contratar solo una parte del viaje, como el traslado o un seguro?</span>
+                <i class="ph ph-plus accordion__icon"></i>
+              </button>
+              <div class="accordion__panel">
+                <p>Sí, también contrato servicios de forma independiente según lo que necesites: vuelos, alojamiento, traslados, asistencia al viajero, entre otros.</p>
+              </div>
+            </div>
+            <div class="accordion__item reveal">
+              <button class="accordion__trigger" aria-expanded="false">
+                <span>¿Qué pasa si tengo un problema mientras estoy de viaje?</span>
+                <i class="ph ph-plus accordion__icon"></i>
+              </button>
+              <div class="accordion__panel">
+                <p>Contás con un teléfono de guardia para comunicarte conmigo ante cualquier imprevisto en destino, antes, durante y después del viaje.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__art reveal" aria-hidden="true">
+          <img src="assets/img/torre-pisa.png" alt="" class="faq__art-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 9. CONTACTO ======================= -->
+  <section class="section contact" id="contacto">
+    <div class="container contact__grid">
+      <div class="contact__info reveal">
+        <p class="eyebrow">Contacto</p>
+        <h2 class="section-title">Hablemos de tu próximo viaje.</h2>
+        <p class="section-lead">Escribime y te respondo personalmente.</p>
+
+        <ul class="contact-list">
+          <li>
+            <i class="ph-fill ph-whatsapp-logo"></i>
+            <div>
+              <strong>WhatsApp — Consultas y reservas</strong>
+              <a href="https://wa.me/5491130934595" target="_blank" rel="noopener">+54 9 11 3093-4595</a>
+            </div>
+          </li>
+          <li>
+            <i class="ph-fill ph-phone-call"></i>
+            <div>
+              <strong>Teléfono de guardia (pasajeros en destino)</strong>
+              <a href="tel:+5491100000001">+54 9 11 0000-0001</a>
+            </div>
+          </li>
+          <li>
+            <i class="ph ph-envelope-simple"></i>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:hola@pasaportear.com.ar">hola@pasaportear.com.ar</a>
+            </div>
+          </li>
+          <li>
+            <i class="ph ph-instagram-logo"></i>
+            <div>
+              <strong>Instagram</strong>
+              <a href="https://instagram.com/pasaportear.viajes" target="_blank" rel="noopener">@pasaportear.viajes</a>
+            </div>
+          </li>
+          <li>
+            <i class="ph ph-map-pin"></i>
+            <div>
+              <strong>Ubicación</strong>
+              <span>Merlo, Buenos Aires — atención virtual. Reuniones presenciales a coordinar en café o espacio de coworking.</span>
+            </div>
+          </li>
+          <li>
+            <i class="ph ph-identification-badge"></i>
+            <div>
+              <strong>Legajo</strong>
+              <span>N.º a confirmar</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+        <h3>Contame tu idea de viaje</h3>
+
+        <div class="form-row">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-row">
+          <label for="whatsapp">WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" required>
+        </div>
+        <div class="form-row">
+          <label for="destino">Destino de interés</label>
+          <input type="text" id="destino" name="destino" placeholder="Ej: Caribe, Bariloche, Visa USA...">
+        </div>
+        <div class="form-row">
+          <label for="mensaje">Contame un poco más</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--turquoise btn--lg btn--block">
+          <i class="ph ph-paper-plane-tilt"></i> Enviar consulta
+        </button>
+        <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <img src="assets/img/logo-horizontal-trimmed.png" alt="Pasaportear Viajes" class="site-footer__logo">
+      <p>Sellá tu próximo destino.</p>
+    </div>
+    <nav aria-label="Enlaces del pie de página">
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#visa-usa">Visa USA</a></li>
+        <li><a href="#destinos">Destinos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="site-footer__social">
+      <a href="https://instagram.com/pasaportear.viajes" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+      <a href="https://wa.me/5491130934595" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
+      <a href="mailto:hola@pasaportear.com.ar" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>&copy; <span id="year"></span> Pasaportear Viajes — Belén García. Legajo N.º a confirmar.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+hero-bg.jpg | Imagen provista directamente por el cliente (islas mujeres.png) | Sin atribución externa requerida
+torre-pisa.png | Imagen provista directamente por el cliente (torre pizza.png) | Sin atribución externa requerida
+hero-bg-v2.jpg | Imagen provista directamente por el cliente (hook v2.jpg) | Sin atribución externa requerida

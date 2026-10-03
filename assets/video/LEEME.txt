@@ -1,0 +1,22 @@
+Video divisor entre "Sobre mí" y "Servicios"
+================================================
+
+Cuando tengas el video (dron u otro) listo, guardalo en esta carpeta
+con este nombre exacto:
+
+    sobre-mi-servicios.mp4
+
+El sitio ya está programado para reproducirlo automáticamente apenas
+el archivo exista en esta ruta: assets/video/sobre-mi-servicios.mp4
+
+Recomendaciones técnicas:
+- Formato: MP4 (códec H.264), para máxima compatibilidad.
+- Orientación: horizontal / apaisado.
+- Peso sugerido: idealmente menor a 30-40 MB para que cargue rápido
+  (se puede comprimir con HandBrake u otra herramienta sin perder
+  demasiada calidad).
+- Mientras no exista el archivo, la sección muestra una foto de playa
+  (assets/img/destinos/caribe.jpg) como imagen de fondo provisoria.
+
+No hace falta tocar el código: con solo colocar el archivo con ese
+nombre en esta carpeta, el video queda funcionando.
