@@ -619,15 +619,35 @@ p:last-child { margin-bottom: 0; }
   background: var(--gray-300);
   border: 1px solid var(--gray-300);
   border-radius: var(--radius-md);
-  overflow: hidden;
 }
 
 .service-card {
+  position: relative;
   background: var(--white);
   padding: var(--space-4) var(--space-3);
-  transition: background var(--dur-fast) var(--ease-out);
+  transition: background var(--dur-base) var(--ease-out), scale var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out), border-radius var(--dur-base) var(--ease-out),
+    opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
 }
-.service-card:hover { background: var(--surface-alt); }
+.service-card:nth-child(1) { border-top-left-radius: var(--radius-md); }
+.service-card:nth-child(4) { border-top-right-radius: var(--radius-md); }
+.service-card:nth-child(9) { border-bottom-left-radius: var(--radius-md); }
+.service-card:nth-child(12) { border-bottom-right-radius: var(--radius-md); }
+.service-card:hover {
+  background: var(--turquoise);
+  scale: 1.05;
+  z-index: 1;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.service-card__icon,
+.service-card h3,
+.service-card p,
+.service-card a { transition: color var(--dur-base) var(--ease-out); }
+.service-card:hover .service-card__icon,
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover a { color: var(--white); }
 .service-card__icon {
   font-size: 1.9rem;
   color: var(--turquoise-dark);
@@ -1186,6 +1206,11 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card:not(:hover) { border-radius: 0; }
+  .service-card:nth-child(1):not(:hover) { border-top-left-radius: var(--radius-md); }
+  .service-card:nth-child(2):not(:hover) { border-top-right-radius: var(--radius-md); }
+  .service-card:nth-child(11):not(:hover) { border-bottom-left-radius: var(--radius-md); }
+  .service-card:nth-child(12):not(:hover) { border-bottom-right-radius: var(--radius-md); }
   .testimonial-card { flex-basis: 280px; }
   .site-footer__grid { grid-template-columns: 1fr 1fr; }
   .faq__layout { grid-template-columns: 1fr; }
@@ -1228,6 +1253,9 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 640px) {
   .section { padding-block: var(--space-5); }
   .services-grid { grid-template-columns: 1fr; }
+  .service-card:not(:hover) { border-radius: 0; }
+  .service-card:first-child:not(:hover) { border-top-left-radius: var(--radius-md); border-top-right-radius: var(--radius-md); }
+  .service-card:last-child:not(:hover) { border-bottom-left-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md); }
   .destinos-head { flex-direction: column; align-items: flex-start; }
   .destinos-nav { display: none; }
   .destino-card { width: 78vw; height: 380px; }
