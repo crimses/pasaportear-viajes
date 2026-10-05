@@ -97,11 +97,78 @@
       });
     };
 
+    /* Modo anclado (solo escritorio): la sección queda fija y la rueda del
+       mouse recorre los destinos. Cada px de scroll vertical = 1 px horizontal. */
+    const destinosSection = document.getElementById("destinos");
+    const destinosSticky = destinosSection && destinosSection.querySelector(".destinos-sticky");
+    const siteHeader = document.getElementById("site-header");
+    const pinMq = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
+    const reducedMq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let pinned = false;
+    let pinMax = 0;
+    let pinPadTop = 0;
+    let pinTicking = false;
+
+    const unpin = () => {
+      pinned = false;
+      if (!destinosSection) return;
+      destinosSection.classList.remove("is-pinned");
+      destinosSection.style.height = "";
+      destinosSection.style.boxSizing = "";
+      destinosSticky.style.top = "";
+    };
+
+    const syncPin = () => {
+      pinTicking = false;
+      if (!pinned) return;
+      const headerH = siteHeader ? siteHeader.offsetHeight : 0;
+      const offset = destinosSection.getBoundingClientRect().top + pinPadTop - headerH;
+      const progress = Math.min(1, Math.max(0, -offset / pinMax));
+      destinosCarousel.scrollLeft = progress * pinMax;
+    };
+
+    const setupPin = () => {
+      if (!destinosSection || !destinosSticky) return;
+      unpin();
+      if (!pinMq.matches || reducedMq.matches) {
+        updateAll();
+        return;
+      }
+      /* La clase se agrega antes de medir: en este modo las tarjetas se
+         ajustan al alto de la pantalla */
+      destinosSection.classList.add("is-pinned");
+      const headerH = siteHeader ? siteHeader.offsetHeight : 0;
+      const stickyH = destinosSticky.offsetHeight;
+      const max = destinosCarousel.scrollWidth - destinosCarousel.clientWidth;
+      /* Si el contenido no entra en pantalla junto al header, no se ancla */
+      if (max <= 0 || stickyH > window.innerHeight - headerH) {
+        unpin();
+        updateAll();
+        return;
+      }
+      pinned = true;
+      pinMax = max;
+      pinPadTop = parseFloat(getComputedStyle(destinosSection).paddingTop) || 0;
+      destinosSection.style.boxSizing = "content-box";
+      destinosSection.style.height = `${stickyH + max}px`;
+      destinosSticky.style.top = `${headerH}px`;
+      syncPin();
+    };
+
+    const requestPinSync = () => {
+      if (!pinned || pinTicking) return;
+      pinTicking = true;
+      requestAnimationFrame(syncPin);
+    };
+
+    /* Desplaza el carrusel una tarjeta: en modo anclado mueve la página */
+    const moveStep = (dir) => {
+      if (pinned) window.scrollBy({ top: dir * getStep(), behavior: "smooth" });
+      else destinosCarousel.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+    };
+
     destinosNavBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const dir = Number(btn.dataset.destinosDir);
-        destinosCarousel.scrollBy({ left: dir * getStep(), behavior: "smooth" });
-      });
+      btn.addEventListener("click", () => moveStep(Number(btn.dataset.destinosDir)));
     });
 
     const progressBar = document.querySelector(".destinos-progress__bar");
@@ -123,12 +190,22 @@
     };
 
     destinosCarousel.addEventListener("scroll", updateAll, { passive: true });
-    window.addEventListener("resize", updateAll);
+    window.addEventListener("resize", () => {
+      setupPin();
+      updateAll();
+    });
+    window.addEventListener("scroll", requestPinSync, { passive: true });
+    pinMq.addEventListener("change", setupPin);
+    reducedMq.addEventListener("change", setupPin);
+    window.addEventListener("load", setupPin);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setupPin);
+    setupPin();
     updateAll();
 
     /* Arrastrar con el mouse (el touch ya scrollea de forma nativa) */
     let dragStartX = 0;
     let dragStartScroll = 0;
+    let dragStartPageY = 0;
     let dragging = false;
     let moved = false;
 
@@ -138,6 +215,7 @@
       moved = false;
       dragStartX = e.clientX;
       dragStartScroll = destinosCarousel.scrollLeft;
+      dragStartPageY = window.scrollY;
     });
 
     window.addEventListener("pointermove", (e) => {
@@ -147,7 +225,9 @@
         moved = true;
         destinosCarousel.classList.add("is-dragging");
       }
-      if (moved) destinosCarousel.scrollLeft = dragStartScroll - dx;
+      if (!moved) return;
+      if (pinned) window.scrollTo({ top: dragStartPageY - dx, behavior: "instant" });
+      else destinosCarousel.scrollLeft = dragStartScroll - dx;
     });
 
     const endDrag = () => {
@@ -176,7 +256,7 @@
     destinosCarousel.addEventListener("keydown", (e) => {
       if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
       e.preventDefault();
-      destinosCarousel.scrollBy({ left: (e.key === "ArrowRight" ? 1 : -1) * getStep(), behavior: "smooth" });
+      moveStep(e.key === "ArrowRight" ? 1 : -1);
     });
   }
 

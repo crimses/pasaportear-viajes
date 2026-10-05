@@ -770,6 +770,16 @@ p:last-child { margin-bottom: 0; }
 .destinos-carousel.is-dragging .destino-card { pointer-events: none; }
 .destino-card__bg img { -webkit-user-drag: none; }
 
+/* Modo anclado (escritorio): la sección queda fija y el scroll vertical
+   recorre el carrusel; la altura de la sección la calcula main.js */
+.destinos-sticky { padding-bottom: var(--space-3); }
+#destinos.is-pinned .destinos-sticky { position: sticky; }
+#destinos.is-pinned .destino-card { height: clamp(300px, calc(100vh - 440px), 420px); }
+#destinos.is-pinned .destinos-carousel {
+  overflow-x: hidden;
+  scroll-snap-type: none;
+}
+
 .destinos-progress {
   height: 4px;
   margin-top: var(--space-2);
