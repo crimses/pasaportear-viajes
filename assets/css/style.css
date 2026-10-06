@@ -242,13 +242,14 @@ p:last-child { margin-bottom: 0; }
   padding-block: 0.65rem;
 }
 
-.site-header__logo { height: 56px; width: auto; }
+.site-header__logo { height: 56px; width: auto; flex-shrink: 0; }
 
 .main-nav__list {
   display: flex;
-  gap: var(--space-4);
+  gap: clamp(0.9rem, 1.4vw, var(--space-4));
 }
 .main-nav__list a {
+  white-space: nowrap;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--ink);
@@ -1266,12 +1267,16 @@ p:last-child { margin-bottom: 0; }
   .faq__art { display: none; }
 }
 
-@media (max-width: 900px) {
+/* Con 8 enlaces el menú no entra en una línea por debajo de ~1200px */
+@media (max-width: 1200px) {
   .main-nav { position: fixed; top: 64px; right: 0; bottom: 0; left: 0; height: calc(100dvh - 64px); background: var(--white); transform: translateX(100%); transition: transform var(--dur-base) var(--ease-out); z-index: 400; overflow-y: auto; }
   .main-nav.is-open { transform: translateX(0); }
   .main-nav__list { flex-direction: column; gap: 0; padding: var(--space-3); }
   .main-nav__list a { display: block; padding: var(--space-2) 0; font-size: 1.2rem; border-bottom: 1px solid var(--gray-100); }
   .nav-toggle { display: flex; }
+}
+
+@media (max-width: 900px) {
   .site-header__actions .btn--whatsapp.btn--sm { display: none; }
 
   .hero { min-height: min(620px, 100vh); }
