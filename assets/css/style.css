@@ -411,9 +411,9 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   z-index: 1;
   top: 50%;
-  right: clamp(1.75rem, 10.5vw, 9rem);
+  right: clamp(1rem, 5vw, 6rem);
   transform: translateY(-48%);
-  width: clamp(300px, 30.5vw, 460px);
+  width: clamp(340px, 40vw, 640px);
   pointer-events: none;
 }
 .hero__polaroid img {
@@ -427,6 +427,10 @@ p:last-child { margin-bottom: 0; }
   position: relative;
   z-index: 1;
   max-width: 640px;
+}
+/* deja libre la zona de las polaroids en pantallas medianas */
+@media (min-width: 901px) {
+  .hero__content { max-width: min(640px, calc(55vw - 3rem)); }
 }
 
 .hero__title {
