@@ -667,6 +667,14 @@ p:last-child { margin-bottom: 0; }
 }
 .service-card p { font-size: 0.92rem; margin-bottom: 0; }
 .service-card a { color: var(--petrol); font-weight: 600; }
+/* Toda la tarjeta es clickeable: el link del título se extiende sobre ella */
+.service-card h3 .service-card__link { color: inherit; font: inherit; }
+.service-card__link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.service-card__link:focus-visible { outline: none; }
+.service-card__link:focus-visible::after { outline: 2px solid var(--turquoise-dark); outline-offset: -4px; }
+.service-card:hover { cursor: pointer; }
+/* los links propios del texto (ej. "Ver más") quedan por encima del link extendido */
+.service-card p a { position: relative; z-index: 1; }
 
 /* ==========================================================================
    Visa USA
