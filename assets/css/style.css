@@ -1026,7 +1026,9 @@ p:last-child { margin-bottom: 0; }
 
 @keyframes process-glow-1 {
   0%, 16%   { color: var(--white); background: var(--turquoise); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
-  21%, 100% { color: var(--gray-300); background: transparent; box-shadow: none; }
+  21%, 90%  { color: var(--gray-300); background: transparent; box-shadow: none; }
+  /* se enciende de a poco mientras el avión aterriza, así el cierre del ciclo es continuo */
+  97%, 100% { color: var(--white); background: var(--turquoise); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
 }
 @keyframes process-glow-2 {
   0%, 25%   { color: var(--gray-300); background: transparent; box-shadow: none; }
