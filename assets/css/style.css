@@ -178,9 +178,10 @@ p:last-child { margin-bottom: 0; }
   border: 2px solid transparent;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+  transition: transform var(--dur-smooth) var(--ease-smooth), box-shadow var(--dur-smooth) var(--ease-smooth), background-color var(--dur-smooth) var(--ease-smooth), border-color var(--dur-smooth) var(--ease-smooth), color var(--dur-smooth) var(--ease-smooth);
 }
-.btn:active { transform: scale(0.97); }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: scale(0.97); transition-duration: var(--dur-fast); }
 .btn i { font-size: 1.15em; }
 
 .btn--sm { padding: 0.55rem 1.1rem; font-size: 0.875rem; }
@@ -192,11 +193,7 @@ p:last-child { margin-bottom: 0; }
   background: var(--turquoise);
   color: var(--black);
 }
-.btn--whatsapp {
-  transition: transform var(--dur-smooth) var(--ease-smooth), box-shadow var(--dur-smooth) var(--ease-smooth), background-color var(--dur-smooth) var(--ease-smooth);
-}
-.btn--whatsapp:hover { background: var(--turquoise-dark); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
-.btn--whatsapp:active { transform: scale(0.97); transition-duration: var(--dur-fast); }
+.btn--whatsapp:hover { background: var(--turquoise-dark); box-shadow: var(--shadow-sm); }
 
 .btn--turquoise {
   background: var(--turquoise);
