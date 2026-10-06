@@ -278,39 +278,4 @@
     });
   });
 
-  /* Contact form: AJAX submit to Formspree */
-  const form = document.getElementById("contact-form");
-  const note = document.getElementById("form-note");
-
-  if (form && note) {
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      note.removeAttribute("data-state");
-      note.textContent = "Enviando...";
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        });
-
-        if (response.ok) {
-          note.textContent = "¡Listo! Recibí tu consulta y te voy a responder a la brevedad.";
-          note.setAttribute("data-state", "success");
-          form.reset();
-        } else {
-          note.textContent = "Hubo un problema al enviar. Probá de nuevo o escribime por WhatsApp.";
-          note.setAttribute("data-state", "error");
-        }
-      } catch (err) {
-        note.textContent = "Hubo un problema al enviar. Probá de nuevo o escribime por WhatsApp.";
-        note.setAttribute("data-state", "error");
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-  }
 })();
