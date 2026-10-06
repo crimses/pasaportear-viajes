@@ -673,8 +673,6 @@ p:last-child { margin-bottom: 0; }
 .service-card__link:focus-visible { outline: none; }
 .service-card__link:focus-visible::after { outline: 2px solid var(--turquoise-dark); outline-offset: -4px; }
 .service-card:hover { cursor: pointer; }
-/* los links propios del texto (ej. "Ver más") quedan por encima del link extendido */
-.service-card p a { position: relative; z-index: 1; }
 
 /* ==========================================================================
    Visa USA
