@@ -411,9 +411,9 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   z-index: 1;
   top: 50%;
-  right: clamp(1rem, 5vw, 6rem);
+  right: clamp(0.5rem, 3vw, 4rem);
   transform: translateY(-48%);
-  width: clamp(340px, 40vw, 640px);
+  width: clamp(360px, 46vw, 740px);
   pointer-events: none;
 }
 .hero__polaroid img {
@@ -430,7 +430,7 @@ p:last-child { margin-bottom: 0; }
 }
 /* deja libre la zona de las polaroids en pantallas medianas */
 @media (min-width: 901px) {
-  .hero__content { max-width: min(640px, calc(55vw - 3rem)); }
+  .hero__content { max-width: min(640px, calc(51vw - 3rem)); }
 }
 
 .hero__title {
