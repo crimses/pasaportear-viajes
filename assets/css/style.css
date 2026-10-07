@@ -239,7 +239,8 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3);
+  /* separación mínima entre logo, links y botón (el sobrante se reparte solo) */
+  gap: 2rem;
   padding-block: 0.65rem;
 }
 
@@ -247,7 +248,7 @@ p:last-child { margin-bottom: 0; }
 
 .main-nav__list {
   display: flex;
-  gap: clamp(0.9rem, 1.4vw, var(--space-4));
+  gap: clamp(0.875rem, 1.2vw, var(--space-4));
 }
 .main-nav__list a {
   white-space: nowrap;
