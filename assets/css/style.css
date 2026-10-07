@@ -642,21 +642,37 @@ p:last-child { margin-bottom: 0; }
 .service-card:nth-child(4) { border-top-right-radius: var(--radius-md); }
 .service-card:nth-child(9) { border-bottom-left-radius: var(--radius-md); }
 .service-card:nth-child(12) { border-bottom-right-radius: var(--radius-md); }
-.service-card:hover {
+.service-card { cursor: pointer; }
+.service-card__icon,
+.service-card h3,
+.service-card p,
+.service-card a { transition: color var(--dur-base) var(--ease-out); }
+/* Resaltado: con hover solo en dispositivos con mouse; en pantallas táctiles,
+   únicamente mientras se mantiene apretada la tarjeta (no al hacer scroll). */
+.services-grid .service-card:active {
   background: var(--turquoise);
   scale: 1.05;
   z-index: 1;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
-.service-card__icon,
-.service-card h3,
-.service-card p,
-.service-card a { transition: color var(--dur-base) var(--ease-out); }
-.service-card:hover .service-card__icon,
-.service-card:hover h3,
-.service-card:hover p,
-.service-card:hover a { color: var(--white); }
+.service-card:active .service-card__icon,
+.service-card:active h3,
+.service-card:active p,
+.service-card:active a { color: var(--white); }
+@media (hover: hover) {
+  .services-grid .service-card:hover {
+    background: var(--turquoise);
+    scale: 1.05;
+    z-index: 1;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+  .service-card:hover .service-card__icon,
+  .service-card:hover h3,
+  .service-card:hover p,
+  .service-card:hover a { color: var(--white); }
+}
 .service-card__icon {
   font-size: 1.9rem;
   color: var(--turquoise-dark);
@@ -673,7 +689,6 @@ p:last-child { margin-bottom: 0; }
 .service-card__link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .service-card__link:focus-visible { outline: none; }
 .service-card__link:focus-visible::after { outline: 2px solid var(--turquoise-dark); outline-offset: -4px; }
-.service-card:hover { cursor: pointer; }
 
 /* ==========================================================================
    Visa USA
@@ -1075,24 +1090,35 @@ p:last-child { margin-bottom: 0; }
 
 .testimonials-track {
   display: flex;
-  gap: var(--space-3);
   width: max-content;
-  animation: testimonials-scroll 32s linear infinite;
 }
 
-.testimonials-carousel:hover .testimonials-track,
-.testimonials-carousel:focus-within .testimonials-track {
-  animation-play-state: paused;
+/* main.js clona los testimonios para cubrir el ancho de cualquier pantalla y
+   fija --set-w (ancho exacto de una tanda) y la duración; así el bucle es
+   infinito y sin saltos. */
+.testimonials-carousel.is-looping .testimonials-track {
+  animation: testimonials-scroll 32s linear infinite;
 }
 
 @keyframes testimonials-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(calc(-1 * var(--set-w, 50%))); }
+}
+
+/* Pausa al pasar el mouse solo en dispositivos con hover: en el celular un toque
+   dejaba el carrusel frenado. */
+@media (hover: hover) {
+  .testimonials-carousel:hover .testimonials-track { animation-play-state: paused; }
+}
+
+/* Con "reducir movimiento" no se anima: el carrusel se desplaza a mano */
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-carousel { overflow-x: auto; }
 }
 
 .testimonial-card {
   flex: 0 0 340px;
-  margin: 0;
+  margin: 0 var(--space-3) 0 0;
   background: var(--surface-alt);
   border-radius: var(--radius-md);
   padding: var(--space-4);
@@ -1238,11 +1264,11 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .service-card:not(:hover) { border-radius: 0; }
-  .service-card:nth-child(1):not(:hover) { border-top-left-radius: var(--radius-md); }
-  .service-card:nth-child(2):not(:hover) { border-top-right-radius: var(--radius-md); }
-  .service-card:nth-child(11):not(:hover) { border-bottom-left-radius: var(--radius-md); }
-  .service-card:nth-child(12):not(:hover) { border-bottom-right-radius: var(--radius-md); }
+  .service-card:nth-child(n) { border-radius: 0; }
+  .service-card:nth-child(1) { border-top-left-radius: var(--radius-md); }
+  .service-card:nth-child(2) { border-top-right-radius: var(--radius-md); }
+  .service-card:nth-child(11) { border-bottom-left-radius: var(--radius-md); }
+  .service-card:nth-child(12) { border-bottom-right-radius: var(--radius-md); }
   .testimonial-card { flex-basis: 280px; }
   .site-footer__grid { grid-template-columns: 1fr 1fr; }
   .faq__layout { grid-template-columns: 1fr; }
@@ -1288,9 +1314,9 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 640px) {
   .section { padding-block: var(--space-5); }
   .services-grid { grid-template-columns: 1fr; }
-  .service-card:not(:hover) { border-radius: 0; }
-  .service-card:first-child:not(:hover) { border-top-left-radius: var(--radius-md); border-top-right-radius: var(--radius-md); }
-  .service-card:last-child:not(:hover) { border-bottom-left-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md); }
+  .service-card:nth-child(n) { border-radius: 0; }
+  .service-card:nth-child(1) { border-top-left-radius: var(--radius-md); border-top-right-radius: var(--radius-md); }
+  .service-card:nth-child(12) { border-bottom-left-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md); }
   .destinos-head { flex-direction: column; align-items: flex-start; }
   .destinos-nav { display: none; }
   .destino-card { width: 78vw; height: 380px; }

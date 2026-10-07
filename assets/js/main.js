@@ -260,6 +260,48 @@
     });
   }
 
+  /* Reseñas: carrusel infinito. Se clonan los testimonios las veces necesarias para
+     cubrir cualquier ancho de pantalla y el recorrido es exactamente el de una
+     tanda, así el reinicio del bucle no se nota. Para sumar o cambiar reseñas
+     alcanza con editar los blockquote originales del HTML. */
+  const testiCarousel = document.querySelector(".testimonials-carousel");
+  const testiTrack = testiCarousel && testiCarousel.querySelector(".testimonials-track");
+
+  if (testiTrack && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const originals = Array.from(testiTrack.children);
+    const SPEED = 45; /* px por segundo */
+
+    const buildTestimonials = () => {
+      testiTrack.querySelectorAll("[data-clone]").forEach((n) => n.remove());
+      const first = originals[0];
+      const last = originals[originals.length - 1];
+      const gap = parseFloat(getComputedStyle(first).marginRight) || 0;
+      const setW = last.offsetLeft + last.offsetWidth - first.offsetLeft + gap;
+      if (!setW) return;
+
+      const copies = Math.ceil(testiCarousel.clientWidth / setW) + 1;
+      for (let i = 0; i < copies; i++) {
+        originals.forEach((card) => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
+          clone.dataset.clone = "";
+          testiTrack.appendChild(clone);
+        });
+      }
+      testiTrack.style.setProperty("--set-w", `${setW}px`);
+      testiTrack.style.animationDuration = `${setW / SPEED}s`;
+      testiCarousel.classList.add("is-looping");
+    };
+
+    let testiResizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(testiResizeTimer);
+      testiResizeTimer = setTimeout(buildTestimonials, 200);
+    });
+    buildTestimonials();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(buildTestimonials);
+  }
+
   /* FAQ accordion */
   document.querySelectorAll(".accordion__trigger").forEach((trigger) => {
     trigger.addEventListener("click", () => {
