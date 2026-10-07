@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada | Pasaportear Viajes</title>
+<meta name="robots" content="noindex">
+
+<!-- Rutas absolutas: esta página se sirve en cualquier URL inexistente -->
+<link rel="icon" type="image/png" href="/assets/img/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/league-spartan-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/glacial-indifference-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+<style>
+  .not-found {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-5) var(--space-3);
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(155deg, var(--petrol) 0%, var(--petrol-dark) 100%);
+  }
+  .not-found__inner { max-width: 560px; }
+  .not-found__logo { height: 56px; width: auto; margin: 0 auto var(--space-5); filter: brightness(0) invert(1); }
+  .not-found .not-found__code {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(4.5rem, 18vw, 8rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--turquoise);
+    margin: 0 0 var(--space-2);
+  }
+  .not-found h1 { color: var(--white); font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem); margin-bottom: var(--space-2); }
+  .not-found p { color: rgba(255, 255, 255, 0.85); margin: 0 0 var(--space-4); }
+  .not-found__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+</style>
+</head>
+<body>
+
+<main class="not-found">
+  <div class="not-found__inner">
+    <img src="/assets/img/logo-horizontal-trimmed.png" alt="Pasaportear Viajes" class="not-found__logo">
+    <p class="not-found__code" aria-hidden="true">404</p>
+    <h1>No encontramos esa página</h1>
+    <p>Puede que el enlace esté mal escrito o que la página ya no exista. Volvé al inicio o escribime y te ayudo con tu viaje.</p>
+    <div class="not-found__actions">
+      <a href="/" class="btn btn--turquoise btn--lg"><i class="ph ph-house"></i> Volver al inicio</a>
+      <a href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje"
+         class="btn btn--ghost-light btn--lg" target="_blank" rel="noopener">
+        <i class="ph-fill ph-whatsapp-logo"></i> Escribime por WhatsApp
+      </a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
