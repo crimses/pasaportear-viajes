@@ -1272,13 +1272,14 @@ p:last-child { margin-bottom: 0; }
 .site-footer p { color: rgba(255, 255, 255, 0.8); }
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 0.8fr;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
   gap: var(--space-4);
   padding-bottom: var(--space-4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 .site-footer__logo { height: 36px; filter: brightness(0) invert(1); margin-bottom: var(--space-2); }
-.site-footer__grid nav ul { display: flex; flex-direction: column; gap: 0.6rem; }
+.site-footer__grid nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem var(--space-3); }
 .site-footer__grid nav a:hover { color: var(--turquoise); }
 .site-footer__social { display: flex; gap: var(--space-2); align-items: flex-start; }
 .site-footer__social a {
@@ -1289,8 +1290,19 @@ p:last-child { margin-bottom: 0; }
   font-size: 1.1rem;
 }
 .site-footer__social a:hover { background: var(--turquoise); color: var(--ink); }
-.site-footer__bottom { padding-top: var(--space-3); font-size: 0.85rem; }
-.site-footer__credit { margin-top: 0.35rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.55); }
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem var(--space-3);
+  padding-top: var(--space-3);
+  /* deja libre el lugar del botón flotante de WhatsApp (58px + margen) */
+  padding-right: calc(58px + var(--space-3) * 2);
+  font-size: 0.85rem;
+}
+.site-footer__bottom p { margin: 0; }
+.site-footer__credit { margin-top: 0; font-size: 0.8rem; color: rgba(255, 255, 255, 0.55); }
 .site-footer__credit a { color: rgba(255, 255, 255, 0.75); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .site-footer__credit a:hover { color: var(--turquoise); }
 
@@ -1306,7 +1318,9 @@ p:last-child { margin-bottom: 0; }
   .service-card:nth-child(11) { border-bottom-left-radius: var(--radius-md); }
   .service-card:nth-child(12) { border-bottom-right-radius: var(--radius-md); }
   .testimonial-card { flex-basis: 280px; }
-  .site-footer__grid { grid-template-columns: 1fr 1fr; }
+  .site-footer__grid { grid-template-columns: 1fr auto; }
+  .site-footer__grid nav { grid-column: 1 / -1; grid-row: 2; }
+  .site-footer__grid nav ul { justify-content: flex-start; }
   .faq__layout { grid-template-columns: 1fr; }
   .faq__art { display: none; }
 }
@@ -1345,6 +1359,8 @@ p:last-child { margin-bottom: 0; }
   .process__num { animation: none !important; color: var(--turquoise-dark) !important; text-shadow: none !important; }
 
   .site-footer__grid { grid-template-columns: 1fr; text-align: left; }
+  .site-footer__grid nav { grid-row: auto; }
+  .site-footer__bottom { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 640px) {
