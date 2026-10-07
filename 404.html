@@ -11,9 +11,10 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/league-spartan-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/glacial-indifference-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/phosphor.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/phosphor-fill.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="/assets/css/phosphor.css">
 
 <style>
   .not-found {
@@ -39,6 +40,7 @@
   }
   .not-found h1 { color: var(--white); font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem); margin-bottom: var(--space-2); }
   .not-found p { color: rgba(255, 255, 255, 0.85); margin: 0 0 var(--space-4); }
+  .not-found .btn--turquoise { border-color: rgba(255, 255, 255, 0.6); }
   .not-found__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
 </style>
 </head>
@@ -46,7 +48,7 @@
 
 <main class="not-found">
   <div class="not-found__inner">
-    <img src="/assets/img/logo-horizontal-trimmed.png" alt="Pasaportear Viajes" class="not-found__logo">
+    <img src="/assets/img/logo-horizontal.webp" width="420" height="126" alt="Pasaportear Viajes" class="not-found__logo">
     <p class="not-found__code" aria-hidden="true">404</p>
     <h1>No encontramos esa página</h1>
     <p>Puede que el enlace esté mal escrito o que la página ya no exista. Volvé al inicio o escribime y te ayudo con tu viaje.</p>

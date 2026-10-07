@@ -13,13 +13,16 @@
 <!-- Fonts: preload self-hosted woff2 -->
 <link rel="preload" href="assets/fonts/league-spartan-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/glacial-indifference-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/phosphor.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/phosphor-fill.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Imagen principal (LCP): se descarga en paralelo con el CSS -->
+<link rel="preload" as="image" href="assets/img/hero-bg-v2-1920.webp"
+      imagesrcset="assets/img/hero-bg-v2-960.webp 960w, assets/img/hero-bg-v2-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
 
 <link rel="stylesheet" href="assets/css/style.css">
-
-<!-- Phosphor Icons (no-build CDN, official integration) -->
-<script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" as="style"></script>
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<!-- Phosphor Icons: solo los íconos usados, alojados en el sitio -->
+<link rel="stylesheet" href="assets/css/phosphor.css">
 </head>
 <body>
 
@@ -29,7 +32,7 @@
 <header class="site-header" id="site-header">
   <div class="container site-header__row">
     <a href="#inicio" class="site-header__brand" aria-label="Pasaportear Viajes - inicio">
-      <img src="assets/img/logo-horizontal-trimmed.png" alt="Pasaportear Viajes" class="site-header__logo">
+      <img src="assets/img/logo-horizontal.webp" width="420" height="126" alt="Pasaportear Viajes" class="site-header__logo">
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
@@ -97,10 +100,10 @@
   <!-- ======================= 1. INICIO / HERO ======================= -->
   <section class="hero">
     <div class="hero__bg" aria-hidden="true">
-      <img src="assets/img/hero-bg-v2.jpg" alt="" loading="eager">
+      <img src="assets/img/hero-bg-v2-1920.webp" srcset="assets/img/hero-bg-v2-960.webp 960w, assets/img/hero-bg-v2-1920.webp 1920w" sizes="100vw" width="1920" height="1419" alt="" fetchpriority="high" decoding="async">
     </div>
     <div class="hero__polaroid" aria-hidden="true">
-      <img src="assets/img/POLAROID V2.png" alt="" loading="eager">
+      <img src="assets/img/polaroid.webp" width="1024" height="1024" alt="" decoding="async">
     </div>
     <div class="container">
       <div class="hero__content reveal">
@@ -130,7 +133,7 @@
   <section class="section" id="sobre-mi">
     <div class="container about__grid">
       <div class="about__media reveal">
-        <img src="assets/img/belen-sobre-mi.jpg" alt="Belén García, Licenciada en Turismo, sonriendo con su diploma en la Universidad de Morón" class="about__photo">
+        <img src="assets/img/belen-sobre-mi.webp" width="960" height="1280" alt="Belén García, Licenciada en Turismo, sonriendo con su diploma en la Universidad de Morón" class="about__photo">
       </div>
 
       <div class="about__content reveal">
@@ -175,7 +178,7 @@
 
   <section class="video-divider reveal" id="video-divider" aria-label="Video de Pasaportear Viajes">
     <div class="video-divider__media">
-      <img src="assets/img/hero-bg.jpg" alt="" class="video-divider__poster">
+      <img src="assets/img/hero-bg.webp" width="1600" height="799" alt="" class="video-divider__poster" loading="lazy" decoding="async">
     </div>
     <div class="video-divider__overlay">
       <button type="button" class="video-divider__play" id="video-divider-play" aria-label="Reproducir video">
@@ -185,7 +188,7 @@
       <p class="video-divider__subtitle">Un viaje es la única compra que te hace más rico.</p>
     </div>
     <video class="video-divider__video" id="video-divider-video" playsinline preload="none"
-           poster="assets/img/hero-bg.jpg">
+           poster="assets/img/hero-bg.webp">
       <source src="assets/video/sobre-mi-servicios.mp4" type="video/mp4">
     </video>
   </section>
@@ -290,7 +293,7 @@
         </a>
       </div>
       <div class="visa__media reveal">
-        <img src="assets/img/aproved 2.png" alt="Visa de Estados Unidos aprobada, junto a la bandera estadounidense" class="visa__photo">
+        <img loading="lazy" src="assets/img/visa-aprobada.webp" width="1400" height="788" alt="Visa de Estados Unidos aprobada, junto a la bandera estadounidense" class="visa__photo">
       </div>
     </div>
   </section>
@@ -325,7 +328,7 @@
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20a%20la%20nieve"
            target="_blank" rel="noopener">
           <div class="destino-card__bg">
-            <img src="assets/img/destinos/bariloche.jpg" alt="Nieve en Bariloche" loading="lazy" decoding="async">
+            <img src="assets/img/destinos/bariloche.webp" width="900" height="1200" alt="Nieve en Bariloche" loading="lazy" decoding="async">
           </div>
           <div class="destino-card__content">
             <span class="destino-card__tag">Nieve</span>
@@ -343,7 +346,7 @@
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20el%20Caribe%20all%20inclusive"
            target="_blank" rel="noopener">
           <div class="destino-card__bg">
-            <img src="assets/img/destinos/caribe.jpg" alt="Playa de Punta Cana, Caribe" loading="lazy" decoding="async">
+            <img src="assets/img/destinos/caribe.webp" width="1350" height="900" alt="Playa de Punta Cana, Caribe" loading="lazy" decoding="async">
           </div>
           <div class="destino-card__content">
             <span class="destino-card__tag">Playas</span>
@@ -361,7 +364,7 @@
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20crucero"
            target="_blank" rel="noopener">
           <div class="destino-card__bg">
-            <img src="assets/img/destinos/crucero.jpg" alt="Atardecer desde un crucero" loading="lazy" decoding="async">
+            <img src="assets/img/destinos/crucero.webp" width="1200" height="900" alt="Atardecer desde un crucero" loading="lazy" decoding="async">
           </div>
           <div class="destino-card__content">
             <span class="destino-card__tag">Cruceros</span>
@@ -379,7 +382,7 @@
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20Miami%20y%20Orlando"
            target="_blank" rel="noopener">
           <div class="destino-card__bg">
-            <img src="assets/img/destinos/miami.jpg" alt="Skyline de Miami" loading="lazy" decoding="async">
+            <img src="assets/img/destinos/miami.webp" width="1350" height="900" alt="Skyline de Miami" loading="lazy" decoding="async">
           </div>
           <div class="destino-card__content">
             <span class="destino-card__tag">Ciudad</span>
@@ -397,7 +400,7 @@
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20a%20Brasil"
            target="_blank" rel="noopener">
           <div class="destino-card__bg">
-            <img src="assets/img/destinos/brasil.jpg" alt="Atardecer en Ipanema, Río de Janeiro" loading="lazy" decoding="async">
+            <img src="assets/img/destinos/brasil.webp" width="900" height="1125" alt="Atardecer en Ipanema, Río de Janeiro" loading="lazy" decoding="async">
           </div>
           <div class="destino-card__content">
             <span class="destino-card__tag">Playas</span>
@@ -415,7 +418,7 @@
            href="https://wa.me/5491130934595?text=Hola%20Bel%C3%A9n%2C%20quiero%20consultar%20por%20un%20viaje%20nacional"
            target="_blank" rel="noopener">
           <div class="destino-card__bg">
-            <img src="assets/img/destinos/argentina.jpg" alt="Obelisco de Buenos Aires" loading="lazy" decoding="async">
+            <img src="assets/img/destinos/argentina.webp" width="900" height="1350" alt="Obelisco de Buenos Aires" loading="lazy" decoding="async">
           </div>
           <div class="destino-card__content">
             <span class="destino-card__tag">Argentina</span>
@@ -502,7 +505,7 @@
   <!-- ======================= 7. RESEÑAS ======================= -->
   <section class="section" id="resenas">
     <div class="resenas__media reveal">
-      <img src="assets/img/estatua libertad.png" alt="" class="resenas__decor" loading="lazy">
+      <img src="assets/img/estatua-libertad.webp" width="1024" height="1024" alt="" class="resenas__decor" loading="lazy">
     </div>
     <div class="container resenas__layout">
       <div class="resenas__content">
@@ -607,7 +610,7 @@
         </div>
 
         <div class="faq__art reveal" aria-hidden="true">
-          <img src="assets/img/torre-pisa.png" alt="" class="faq__art-img" loading="lazy">
+          <img src="assets/img/torre-pisa.webp" width="520" height="1465" alt="" class="faq__art-img" loading="lazy">
         </div>
       </div>
     </div>
@@ -680,7 +683,7 @@
 <footer class="site-footer">
   <div class="container site-footer__grid">
     <div>
-      <img src="assets/img/logo-horizontal-trimmed.png" alt="Pasaportear Viajes" class="site-footer__logo">
+      <img src="assets/img/logo-horizontal.webp" width="420" height="126" alt="Pasaportear Viajes" class="site-footer__logo">
       <p>Sellá tu próximo destino.</p>
     </div>
     <nav aria-label="Enlaces del pie de página">
