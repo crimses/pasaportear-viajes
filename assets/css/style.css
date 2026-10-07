@@ -44,9 +44,6 @@
   /* Brand colors — locked, do not introduce new hues */
   --turquoise: #00BCC1;
   --turquoise-dark: #039499;
-  /* Variante más profunda del turquesa para fondos con texto blanco (contraste AA ≥ 4,5:1) */
-  --turquoise-ui: #007E82;
-  --turquoise-ui-hover: #00666A;
   --petrol: #0B617E;
   --petrol-dark: #084A61;
   --black: #000000;
@@ -194,19 +191,16 @@ p:last-child { margin-bottom: 0; }
 .btn--block { width: 100%; }
 
 .btn--whatsapp {
-  background: var(--turquoise-ui);
+  background: var(--turquoise);
   color: var(--white);
 }
-.btn--whatsapp:hover { background: var(--turquoise-ui-hover); box-shadow: var(--shadow-sm); }
-/* Sobre fondos oscuros el turquesa profundo necesita un borde claro para destacarse */
-.hero .btn--whatsapp,
-.visa .btn--whatsapp { border-color: rgba(255, 255, 255, 0.6); }
+.btn--whatsapp:hover { background: var(--turquoise-dark); box-shadow: var(--shadow-sm); }
 
 .btn--turquoise {
-  background: var(--turquoise-ui);
+  background: var(--turquoise);
   color: var(--white);
 }
-.btn--turquoise:hover { background: var(--turquoise-ui-hover); box-shadow: var(--shadow-sm); }
+.btn--turquoise:hover { background: var(--turquoise-dark); box-shadow: var(--shadow-sm); }
 
 .btn--petrol {
   background: var(--white);
@@ -309,7 +303,7 @@ p:last-child { margin-bottom: 0; }
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: var(--turquoise-ui);
+  background: var(--turquoise);
   color: var(--white);
   display: flex;
   align-items: center;
@@ -318,7 +312,7 @@ p:last-child { margin-bottom: 0; }
   box-shadow: var(--shadow-md);
   transition: transform var(--dur-smooth) var(--ease-smooth), background-color var(--dur-smooth) var(--ease-smooth);
 }
-.whatsapp-float:hover { transform: scale(1.08); background: var(--turquoise-ui-hover); }
+.whatsapp-float:hover { transform: scale(1.08); background: var(--turquoise-dark); }
 
 /* ==========================================================================
    Typography helpers
@@ -947,7 +941,7 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.6rem;
-  color: var(--gray-500);
+  color: var(--gray-300);
   display: inline-flex;
   align-items: center;
   padding: 0.15rem 0.6rem;
@@ -1055,20 +1049,20 @@ p:last-child { margin-bottom: 0; }
 .process__step[data-step="3"] .process__num { animation: process-glow-3 11s ease-in-out infinite; }
 
 @keyframes process-glow-1 {
-  0%, 16%   { color: var(--white); background: var(--turquoise-ui); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
-  21%, 90%  { color: var(--gray-500); background: transparent; box-shadow: none; }
+  0%, 16%   { color: var(--white); background: var(--turquoise); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
+  21%, 90%  { color: var(--gray-300); background: transparent; box-shadow: none; }
   /* se enciende de a poco mientras el avión aterriza, así el cierre del ciclo es continuo */
-  97%, 100% { color: var(--white); background: var(--turquoise-ui); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
+  97%, 100% { color: var(--white); background: var(--turquoise); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
 }
 @keyframes process-glow-2 {
-  0%, 25%   { color: var(--gray-500); background: transparent; box-shadow: none; }
-  29%, 45%  { color: var(--white); background: var(--turquoise-ui); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
-  50%, 100% { color: var(--gray-500); background: transparent; box-shadow: none; }
+  0%, 25%   { color: var(--gray-300); background: transparent; box-shadow: none; }
+  29%, 45%  { color: var(--white); background: var(--turquoise); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
+  50%, 100% { color: var(--gray-300); background: transparent; box-shadow: none; }
 }
 @keyframes process-glow-3 {
-  0%, 54%   { color: var(--gray-500); background: transparent; box-shadow: none; }
-  58%, 74%  { color: var(--white); background: var(--turquoise-ui); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
-  80%, 100% { color: var(--gray-500); background: transparent; box-shadow: none; }
+  0%, 54%   { color: var(--gray-300); background: transparent; box-shadow: none; }
+  58%, 74%  { color: var(--white); background: var(--turquoise); box-shadow: 0 0 0 1px rgba(0, 188, 193, 0.4), 0 0 20px rgba(0, 188, 193, 0.55); }
+  80%, 100% { color: var(--gray-300); background: transparent; box-shadow: none; }
 }
 
 .guard-banner {
