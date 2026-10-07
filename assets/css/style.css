@@ -192,13 +192,13 @@ p:last-child { margin-bottom: 0; }
 
 .btn--whatsapp {
   background: var(--turquoise);
-  color: var(--black);
+  color: var(--white);
 }
 .btn--whatsapp:hover { background: var(--turquoise-dark); box-shadow: var(--shadow-sm); }
 
 .btn--turquoise {
   background: var(--turquoise);
-  color: var(--black);
+  color: var(--white);
 }
 .btn--turquoise:hover { background: var(--turquoise-dark); box-shadow: var(--shadow-sm); }
 
@@ -303,7 +303,7 @@ p:last-child { margin-bottom: 0; }
   height: 58px;
   border-radius: 50%;
   background: var(--turquoise);
-  color: var(--black);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1289,7 +1289,7 @@ p:last-child { margin-bottom: 0; }
   border-radius: 50%;
   font-size: 1.1rem;
 }
-.site-footer__social a:hover { background: var(--turquoise); color: var(--ink); }
+.site-footer__social a:hover { background: var(--turquoise); color: var(--white); }
 .site-footer__bottom {
   display: flex;
   flex-wrap: wrap;
