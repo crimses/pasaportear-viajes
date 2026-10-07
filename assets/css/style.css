@@ -1279,7 +1279,7 @@ p:last-child { margin-bottom: 0; }
   padding-bottom: var(--space-4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
-.site-footer__logo { height: 36px; filter: brightness(0) invert(1); margin-bottom: var(--space-2); }
+.site-footer__logo { height: 36px; width: auto; filter: brightness(0) invert(1); margin-bottom: var(--space-2); }
 .site-footer__grid nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem var(--space-3); }
 .site-footer__grid nav a:hover { color: var(--turquoise); }
 .site-footer__social { display: flex; gap: var(--space-2); align-items: flex-start; }
