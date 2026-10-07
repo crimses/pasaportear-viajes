@@ -1224,6 +1224,30 @@ p:last-child { margin-bottom: 0; }
 .contact-list a:hover { color: var(--petrol); }
 .contact-list span { color: var(--gray-700); font-size: 0.95rem; }
 
+/* Escritorio: título y botón a la izquierda, datos de contacto en dos columnas a la derecha */
+@media (min-width: 901px) {
+  .contact__info {
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-rows: repeat(3, auto) 1fr;
+    column-gap: var(--space-7);
+    align-items: start;
+  }
+  .contact__info > .eyebrow,
+  .contact__info > .section-title,
+  .contact__info > .section-lead { grid-column: 1; }
+  .contact__info > .btn { grid-column: 1; grid-row: 4; align-self: start; justify-self: start; margin-top: var(--space-2); }
+  .contact__info > .contact-list {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4) var(--space-4);
+    margin: 0;
+  }
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
