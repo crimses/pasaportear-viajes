@@ -21,8 +21,6 @@
       imagesrcset="assets/img/hero-bg-v2-960.webp 960w, assets/img/hero-bg-v2-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
 
 <link rel="stylesheet" href="assets/css/style.css">
-<!-- Phosphor Icons: solo los íconos usados, alojados en el sitio -->
-<link rel="stylesheet" href="assets/css/phosphor.css">
 </head>
 <body>
 
@@ -32,7 +30,7 @@
 <header class="site-header" id="site-header">
   <div class="container site-header__row">
     <a href="#inicio" class="site-header__brand" aria-label="Pasaportear Viajes - inicio">
-      <img src="assets/img/logo-horizontal.webp" width="420" height="126" alt="Pasaportear Viajes" class="site-header__logo">
+      <img src="assets/img/logo-horizontal.webp" width="420" height="126" alt="Pasaportear Viajes" class="site-header__logo" fetchpriority="high">
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
@@ -103,7 +101,11 @@
       <img src="assets/img/hero-bg-v2-1920.webp" srcset="assets/img/hero-bg-v2-960.webp 960w, assets/img/hero-bg-v2-1920.webp 1920w" sizes="100vw" width="1920" height="1419" alt="" fetchpriority="high" decoding="async">
     </div>
     <div class="hero__polaroid" aria-hidden="true">
-      <img src="assets/img/polaroid.webp" width="1024" height="1024" alt="" decoding="async">
+      <picture>
+        <source media="(min-width: 901px)" srcset="assets/img/polaroid.webp">
+        <!-- en celular las fotos están ocultas: se usa un pixel transparente y no se descarga nada -->
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="1024" height="1024" alt="" decoding="async">
+      </picture>
     </div>
     <div class="container">
       <div class="hero__content reveal">
@@ -133,7 +135,7 @@
   <section class="section" id="sobre-mi">
     <div class="container about__grid">
       <div class="about__media reveal">
-        <img src="assets/img/belen-sobre-mi.webp" width="960" height="1280" alt="Belén García, Licenciada en Turismo, sonriendo con su diploma en la Universidad de Morón" class="about__photo">
+        <img src="assets/img/belen-sobre-mi.webp" width="960" height="1280" alt="Belén García, Licenciada en Turismo, sonriendo con su diploma en la Universidad de Morón" class="about__photo" loading="lazy" decoding="async">
       </div>
 
       <div class="about__content reveal">
@@ -188,7 +190,7 @@
       <p class="video-divider__subtitle">Un viaje es la única compra que te hace más rico.</p>
     </div>
     <video class="video-divider__video" id="video-divider-video" playsinline preload="none"
-           poster="assets/img/hero-bg.webp">
+           data-poster="assets/img/hero-bg.webp">
       <source src="assets/video/sobre-mi-servicios.mp4" type="video/mp4">
     </video>
   </section>

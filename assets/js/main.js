@@ -1,6 +1,14 @@
 (() => {
   "use strict";
 
+  /* Ejecuta tareas que miden el diseño (fuerzan layout) cuando el navegador está libre,
+     después de la carga: así no retrasan el primer pintado ni bloquean el hilo principal. */
+  const whenIdle = (fn) => {
+    const run = () => ("requestIdleCallback" in window ? requestIdleCallback(fn, { timeout: 2000 }) : setTimeout(fn, 200));
+    if (document.readyState === "complete") run();
+    else window.addEventListener("load", run, { once: true });
+  };
+
   /* Footer year */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -59,6 +67,10 @@
     };
 
     videoPlayBtn.addEventListener("click", () => {
+      /* El póster se asigna recién al reproducir (ya está en caché por la imagen de fondo) */
+      if (!videoEl.getAttribute("poster") && videoEl.dataset.poster) {
+        videoEl.setAttribute("poster", videoEl.dataset.poster);
+      }
       videoDivider.classList.add("is-playing");
       const playPromise = videoEl.play();
       if (playPromise && typeof playPromise.catch === "function") {
@@ -197,10 +209,11 @@
     window.addEventListener("scroll", requestPinSync, { passive: true });
     pinMq.addEventListener("change", setupPin);
     reducedMq.addEventListener("change", setupPin);
-    window.addEventListener("load", setupPin);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setupPin);
-    setupPin();
-    updateAll();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => whenIdle(setupPin));
+    whenIdle(() => {
+      setupPin();
+      updateAll();
+    });
 
     /* Arrastrar con el mouse (el touch ya scrollea de forma nativa) */
     let dragStartX = 0;
@@ -298,8 +311,8 @@
       clearTimeout(testiResizeTimer);
       testiResizeTimer = setTimeout(buildTestimonials, 200);
     });
-    buildTestimonials();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(buildTestimonials);
+    whenIdle(buildTestimonials);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => whenIdle(buildTestimonials));
   }
 
   /* FAQ accordion */
