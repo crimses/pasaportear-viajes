@@ -1204,6 +1204,18 @@ p:last-child { margin-bottom: 0; }
 .accordion__panel > * { min-height: 0; }
 .accordion__item.is-open .accordion__panel > p { padding-bottom: var(--space-3); }
 .accordion__panel { overflow: hidden; }
+/* Los links dentro de las respuestas se distinguen del texto */
+.accordion__panel p a {
+  color: var(--petrol);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--turquoise);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-smooth) var(--ease-smooth), text-decoration-color var(--dur-smooth) var(--ease-smooth);
+}
+.accordion__panel p a:hover,
+.accordion__panel p a:focus-visible { color: var(--turquoise-dark); text-decoration-color: var(--turquoise-dark); }
 
 /* ==========================================================================
    Contact
