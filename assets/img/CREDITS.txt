@@ -2,3 +2,4 @@ hero-bg.webp | Imagen provista directamente por el cliente (islas mujeres.png) |
 torre-pisa.webp | Imagen provista directamente por el cliente (torre pizza.png) | Sin atribución externa requerida
 hero-bg-v2-1920.webp (y hero-bg-v2-960.webp) | Imagen provista directamente por el cliente (hook v2.jpg) | Sin atribución externa requerida
 polaroid.webp | Imagen provista directamente por el cliente (POLAROID V2.png) | Sin atribucion externa requerida
+turcas-y-caicos.webp | Foto de Rosemary Media en Unsplash (rosemary-media-BDCJHWdKUUI-unsplash.jpg) | Licencia Unsplash, sin atribucion externa requerida
