@@ -347,8 +347,8 @@ p:last-child { margin-bottom: 0; }
 #resenas { position: relative; }
 .resenas__media {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: var(--space-4);
+  bottom: var(--space-6);
   left: calc(max(0px, (100% - var(--container-max)) / 2) + var(--space-3) - clamp(40px, 5vw, 80px));
   width: clamp(180px, 20vw, 280px);
 }
