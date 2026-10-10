@@ -1262,11 +1262,13 @@ p:last-child { margin-bottom: 0; }
   .contact__info > .contact-list {
     grid-column: 2;
     grid-row: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-4) var(--space-4);
+    display: block;
+    columns: 2;
+    column-gap: var(--space-5);
     margin: 0;
   }
+  /* cada dato es un bloque que no se corta y todos separados por el mismo espacio */
+  .contact-list li { break-inside: avoid; margin-bottom: var(--space-4); }
 }
 
 /* ==========================================================================
@@ -1539,8 +1541,10 @@ p:last-child { margin-bottom: 0; }
 .icon-svg { width: 1em; height: 1em; flex-shrink: 0; fill: currentColor; }
 .btn .icon-svg { font-size: 1.15em; }
 .contact-list .icon-svg { font-size: 1.4rem; color: var(--turquoise-dark); margin-top: 0.15em; }
+.contact-list .icon-wa { box-sizing: border-box; padding: 0.13rem; }
 .site-footer__social .icon-svg { font-size: 1.1rem; }
-.site-footer__social a i { font-size: 1.33rem; }
+.site-footer__social a i,
+.site-footer__social .icon-ph { font-size: 1.33rem; }
 
 /* Logos de las marcas: apagados en gris y a color al pasar el mouse.
    Cada logo se escala segun su contenido visible (sin el aire vacio del archivo) para entrar en la
