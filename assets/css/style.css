@@ -356,7 +356,7 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: clamp(520px, 40vw, 700px);
+  width: clamp(680px, 52vw, 900px);
   max-width: none;
   height: auto;
   transform: translateX(-50%);
