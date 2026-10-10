@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 798" width="1200" height="798" role="img" aria-label="Visa de Estados Unidos con sello APPROVED">
+  <defs>
+    <clipPath id="card"><rect width="1200" height="798" rx="38"/></clipPath>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9e4f6"/>
+      <stop offset="0.45" stop-color="#f4f3fa"/>
+      <stop offset="0.75" stop-color="#e8f0e6"/>
+      <stop offset="1" stop-color="#f1e6ea"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1f3572"/>
+      <stop offset="0.42" stop-color="#4d64a6"/>
+      <stop offset="0.56" stop-color="#8f4f6e"/>
+      <stop offset="0.7" stop-color="#a8352f"/>
+      <stop offset="1" stop-color="#8e2823"/>
+    </linearGradient>
+    <linearGradient id="dome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9cfb4" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#b9cfb4" stop-opacity="0.15"/>
+    </linearGradient>
+    <pattern id="guilloche" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+      <path d="M0 13 Q6.5 0 13 13 T26 13" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.6"/>
+    </pattern>
+    <clipPath id="photoClip"><rect x="70" y="196" width="360" height="480" rx="20"/></clipPath>
+    <filter id="rough" x="-5%" y="-10%" width="110%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="3" seed="3" result="s"/>
+      <feColorMatrix in="s" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3.2 2.55" result="holes"/>
+      <feComposite in="d" in2="holes" operator="in"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="798" fill="url(#paper)"/>
+
+    <!-- franja superior -->
+    <rect width="1200" height="168" fill="url(#band)"/>
+    <rect width="1200" height="168" fill="url(#guilloche)"/>
+    <text x="64" y="128" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="118" letter-spacing="10" fill="#e9eefb" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2">VISA</text>
+    <text x="1136" y="74" text-anchor="end" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="56" letter-spacing="3" fill="#f6c9bd" fill-opacity="0.9" stroke="#ffe6df" stroke-opacity="0.6" stroke-width="1.5">UNITED STATES</text>
+    <text x="1136" y="140" text-anchor="end" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="56" letter-spacing="3" fill="#f6c9bd" fill-opacity="0.9" stroke="#ffe6df" stroke-opacity="0.6" stroke-width="1.5">OF AMERICA</text>
+
+    <!-- marca de agua (cupula) -->
+    <g>
+      <ellipse cx="760" cy="470" rx="190" ry="120" fill="url(#dome)"/>
+      <rect x="610" y="470" width="300" height="46" fill="url(#dome)"/>
+      <rect x="590" y="516" width="340" height="22" fill="url(#dome)"/>
+      <g fill="#b9cfb4" fill-opacity="0.35">
+        <rect x="640" y="540" width="16" height="110"/><rect x="690" y="540" width="16" height="110"/>
+        <rect x="740" y="540" width="16" height="110"/><rect x="790" y="540" width="16" height="110"/>
+        <rect x="840" y="540" width="16" height="110"/>
+      </g>
+    </g>
+
+    <!-- foto (silueta) -->
+    <g clip-path="url(#photoClip)">
+      <rect x="70" y="196" width="360" height="480" fill="#c9d3e8"/>
+      <circle cx="250" cy="360" r="104" fill="#0b0b0f"/>
+      <path d="M60 690 C70 540 150 490 250 490 C350 490 430 540 440 690 Z" fill="#0b0b0f"/>
+    </g>
+    <rect x="70" y="196" width="360" height="480" rx="20" fill="none" stroke="#7d8fb6" stroke-opacity="0.5" stroke-width="3"/>
+
+    <!-- campos (datos de muestra) -->
+    <g font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="22" fill="#2b2f3a">
+      <text x="470" y="214">Issuing Post Name</text>
+      <text x="876" y="214">Control Number</text>
+      <text x="470" y="292">Surname</text>
+      <text x="470" y="368">Given Name</text>
+      <text x="906" y="368">Visa Type / Class</text>
+      <text x="470" y="446">Passport Number</text>
+      <text x="718" y="446">Sex</text>
+      <text x="800" y="446">Birth Date</text>
+      <text x="1008" y="446">Nationality</text>
+      <text x="470" y="522">Entries</text>
+      <text x="594" y="522">Issue Date</text>
+      <text x="818" y="522">Expiration Date</text>
+      <text x="470" y="598">Annotation</text>
+    </g>
+    <g font-family="'Courier New',Courier,monospace" font-weight="700" font-size="40" fill="#1b1e27" letter-spacing="2">
+      <text x="470" y="256">EEEEEEEE</text>
+      <text x="876" y="256" font-size="32">0000000000000</text>
+      <text x="470" y="334">EEEEEEEEE</text>
+      <text x="470" y="410">EEEEEEEE EEEEE</text>
+      <text x="906" y="410">E  EE  EE</text>
+      <text x="470" y="488">000000000</text>
+      <text x="718" y="488">E</text>
+      <text x="800" y="488" font-size="34">00000E00000</text>
+      <text x="1008" y="488">EEEE</text>
+      <text x="470" y="566">E</text>
+      <text x="594" y="566" font-size="34">00000E00000</text>
+      <text x="818" y="566" font-size="34">00000E00000</text>
+      <text x="470" y="640">EE</text>
+    </g>
+    <text x="900" y="636" font-family="'Courier New',Courier,monospace" font-weight="700" font-size="46" fill="#d1241c" letter-spacing="2">E00000000</text>
+
+    <!-- zona de lectura mecanica -->
+    <g font-family="'Courier New',Courier,monospace" font-weight="700" font-size="44" fill="#262a36" letter-spacing="3.2">
+      <text x="48" y="722">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</text>
+      <text x="48" y="776">0000000000000000000000000000000000</text>
+    </g>
+
+    <!-- sello APPROVED -->
+    <g transform="translate(600 392) rotate(-9)" filter="url(#rough)" opacity="0.94">
+      <rect x="-392" y="-112" width="784" height="224" rx="26" fill="none" stroke="#c8261d" stroke-width="15"/>
+      <rect x="-366" y="-86" width="732" height="172" rx="14" fill="none" stroke="#c8261d" stroke-width="5"/>
+      <text x="0" y="54" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Impact,Arial,sans-serif" font-weight="900" font-size="150" letter-spacing="6" fill="#c8261d">APPROVED</text>
+    </g>
+  </g>
+</svg>

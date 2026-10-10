@@ -273,47 +273,50 @@
     });
   }
 
-  /* Reseñas: carrusel infinito. Se clonan los testimonios las veces necesarias para
-     cubrir cualquier ancho de pantalla y el recorrido es exactamente el de una
-     tanda, así el reinicio del bucle no se nota. Para sumar o cambiar reseñas
-     alcanza con editar los blockquote originales del HTML. */
-  const testiCarousel = document.querySelector(".testimonials-carousel");
-  const testiTrack = testiCarousel && testiCarousel.querySelector(".testimonials-track");
+  /* Carruseles infinitos (reseñas y marcas). Se clonan los ítems las veces necesarias
+     para cubrir cualquier ancho de pantalla y el recorrido es exactamente el de una
+     tanda, así el reinicio del bucle no se nota. Para sumar o cambiar ítems alcanza con
+     editar los originales del HTML: los clones se generan solos. */
+  const initLoopCarousel = (carouselSel, trackSel, speed) => {
+    const carousel = document.querySelector(carouselSel);
+    const track = carousel && carousel.querySelector(trackSel);
+    if (!track || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  if (testiTrack && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const originals = Array.from(testiTrack.children);
-    const SPEED = 45; /* px por segundo */
+    const originals = Array.from(track.children);
 
-    const buildTestimonials = () => {
-      testiTrack.querySelectorAll("[data-clone]").forEach((n) => n.remove());
+    const build = () => {
+      track.querySelectorAll("[data-clone]").forEach((n) => n.remove());
       const first = originals[0];
       const last = originals[originals.length - 1];
       const gap = parseFloat(getComputedStyle(first).marginRight) || 0;
       const setW = last.offsetLeft + last.offsetWidth - first.offsetLeft + gap;
       if (!setW) return;
 
-      const copies = Math.ceil(testiCarousel.clientWidth / setW) + 1;
+      const copies = Math.ceil(carousel.clientWidth / setW) + 1;
       for (let i = 0; i < copies; i++) {
-        originals.forEach((card) => {
-          const clone = card.cloneNode(true);
+        originals.forEach((item) => {
+          const clone = item.cloneNode(true);
           clone.setAttribute("aria-hidden", "true");
           clone.dataset.clone = "";
-          testiTrack.appendChild(clone);
+          track.appendChild(clone);
         });
       }
-      testiTrack.style.setProperty("--set-w", `${setW}px`);
-      testiTrack.style.animationDuration = `${setW / SPEED}s`;
-      testiCarousel.classList.add("is-looping");
+      track.style.setProperty("--set-w", `${setW}px`);
+      track.style.animationDuration = `${setW / speed}s`;
+      carousel.classList.add("is-looping");
     };
 
-    let testiResizeTimer;
+    let resizeTimer;
     window.addEventListener("resize", () => {
-      clearTimeout(testiResizeTimer);
-      testiResizeTimer = setTimeout(buildTestimonials, 200);
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(build, 200);
     });
-    whenIdle(buildTestimonials);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => whenIdle(buildTestimonials));
-  }
+    whenIdle(build);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => whenIdle(build));
+  };
+
+  initLoopCarousel(".testimonials-carousel", ".testimonials-track", 45); /* px por segundo */
+  initLoopCarousel(".brands-carousel", ".brands-track", 60);
 
   /* FAQ accordion */
   document.querySelectorAll(".accordion__trigger").forEach((trigger) => {

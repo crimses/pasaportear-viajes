@@ -3,3 +3,4 @@ torre-pisa.webp | Imagen provista directamente por el cliente (torre pizza.png) 
 hero-bg-v2-1920.webp (y hero-bg-v2-960.webp) | Imagen provista directamente por el cliente (hook v2.jpg) | Sin atribución externa requerida
 polaroid.webp | Imagen provista directamente por el cliente (POLAROID V2.png) | Sin atribucion externa requerida
 turcas-y-caicos.webp | Foto de Rosemary Media en Unsplash (rosemary-media-BDCJHWdKUUI-unsplash.jpg) | Licencia Unsplash, sin atribucion externa requerida
+visa-aprobada.svg | Ilustracion propia (specimen de visa con datos de relleno y sello APPROVED), creada para este sitio | Sin atribucion externa requerida

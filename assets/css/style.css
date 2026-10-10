@@ -55,7 +55,7 @@
   --gray-500: #78878B;
   --gray-300: #D7DFE1;
   --gray-100: #EEF3F4;
-  --surface-alt: #F6F9FA;
+  --surface-alt: #EAF7F9;
 
   /* Type */
   --font-display: "League Spartan", system-ui, sans-serif;
@@ -1098,7 +1098,8 @@ p:last-child { margin-bottom: 0; }
 /* main.js clona los testimonios para cubrir el ancho de cualquier pantalla y
    fija --set-w (ancho exacto de una tanda) y la duración; así el bucle es
    infinito y sin saltos. */
-.testimonials-carousel.is-looping .testimonials-track {
+.testimonials-carousel.is-looping .testimonials-track,
+.brands-carousel.is-looping .brands-track {
   animation: testimonials-scroll 32s linear infinite;
 }
 
@@ -1110,16 +1111,20 @@ p:last-child { margin-bottom: 0; }
 /* Pausa al pasar el mouse solo en dispositivos con hover: en el celular un toque
    dejaba el carrusel frenado. */
 @media (hover: hover) {
-  .testimonials-carousel:hover .testimonials-track { animation-play-state: paused; }
+  .testimonials-carousel:hover .testimonials-track,
+  .brands-carousel:hover .brands-track { animation-play-state: paused; }
 }
 
 /* Con "reducir movimiento" no se anima: el carrusel se desplaza a mano */
 @media (prefers-reduced-motion: reduce) {
-  .testimonials-carousel { overflow-x: auto; }
+  .testimonials-carousel,
+  .brands-carousel { overflow-x: auto; }
 }
 
 .testimonial-card {
-  flex: 0 0 340px;
+  flex: 0 0 420px;
+  display: flex;
+  flex-direction: column;
   margin: 0 var(--space-3) 0 0;
   background: var(--surface-alt);
   border-radius: var(--radius-md);
@@ -1133,6 +1138,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: var(--space-2);
 }
 .testimonial-card footer {
+  margin-top: auto;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.88rem;
@@ -1320,7 +1326,7 @@ p:last-child { margin-bottom: 0; }
   .service-card:nth-child(2) { border-top-right-radius: var(--radius-md); }
   .service-card:nth-child(11) { border-bottom-left-radius: var(--radius-md); }
   .service-card:nth-child(12) { border-bottom-right-radius: var(--radius-md); }
-  .testimonial-card { flex-basis: 280px; }
+  .testimonial-card { flex-basis: 300px; }
   .site-footer__grid { grid-template-columns: 1fr auto; }
   .site-footer__grid nav { grid-column: 1 / -1; grid-row: 2; }
   .site-footer__grid nav ul { justify-content: flex-start; }
@@ -1484,3 +1490,51 @@ p:last-child { margin-bottom: 0; }
 .ph-fill.ph-play:before { content: "\e3d0"; }
 .ph-fill.ph-quotes:before { content: "\e660"; }
 .ph-fill.ph-whatsapp-logo:before { content: "\e5d0"; }
+
+
+/* ==========================================================================
+   Marcas (carrusel infinito, como el de crimses.com)
+   ========================================================================== */
+
+.brands {
+  background: var(--white);
+  padding-block: var(--space-4);
+}
+.brands-carousel {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.brands-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+.brands-track li {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-right: 1.25rem;
+  padding-right: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: var(--ink);
+  opacity: 0.4;
+  transition: opacity var(--dur-base) var(--ease-smooth), color var(--dur-base) var(--ease-smooth);
+}
+.brands-track li i { font-size: 1.1em; color: var(--gray-500); transition: color var(--dur-base) var(--ease-smooth); }
+@media (hover: hover) {
+  .brands-track li:hover { opacity: 1; color: var(--turquoise); }
+  .brands-track li:hover i { color: var(--turquoise); }
+}
+@media (max-width: 640px) {
+  .brands-track li { font-size: 1.15rem; gap: 0.9rem; margin-right: 0.9rem; padding-right: 0.9rem; }
+}
+
+/* Íconos en SVG (logos que no están en la fuente recortada) */
+.icon-svg { width: 1em; height: 1em; flex-shrink: 0; }
+.contact-list .icon-svg { font-size: 1.4rem; color: var(--turquoise-dark); margin-top: 0.15em; }
+.site-footer__social .icon-svg { font-size: 1.1rem; }
