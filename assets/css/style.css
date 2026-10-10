@@ -1536,10 +1536,12 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* Íconos en SVG (logos que no están en la fuente recortada) */
-.icon-svg { width: 1em; height: 1em; flex-shrink: 0; }
+.icon-svg { width: 1em; height: 1em; flex-shrink: 0; fill: currentColor; }
 .btn .icon-svg { font-size: 1.15em; }
 .contact-list .icon-svg { font-size: 1.4rem; color: var(--turquoise-dark); margin-top: 0.15em; }
 .site-footer__social .icon-svg { font-size: 1.1rem; }
+.site-footer__social .icon-fb { font-size: 1.27rem; }
+.site-footer__social a i { font-size: 1.33rem; }
 
 /* Logos de las marcas: apagados en gris y a color al pasar el mouse */
 .brand-logo {

@@ -318,6 +318,18 @@
   initLoopCarousel(".testimonials-carousel", ".testimonials-track", 45); /* px por segundo */
   initLoopCarousel(".brands-carousel", ".brands-track", 60);
 
+  /* Mail: en escritorio abre Gmail con un mensaje nuevo dirigido al mail; en celular (o sin JS)
+     queda el mailto normal, que abre la app de correo del teléfono. */
+  const gmailMq = window.matchMedia("(hover: hover) and (pointer: fine)");
+  document.querySelectorAll("a[data-gmail]").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (!gmailMq.matches) return;
+      e.preventDefault();
+      const to = link.getAttribute("href").replace(/^mailto:/, "");
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}`, "_blank", "noopener");
+    });
+  });
+
   /* FAQ accordion */
   document.querySelectorAll(".accordion__trigger").forEach((trigger) => {
     trigger.addEventListener("click", () => {
