@@ -1545,27 +1545,29 @@ p:last-child { margin-bottom: 0; }
 
 /* Logos de las marcas: apagados en gris y a color al pasar el mouse */
 .brand-logo {
-  height: 1.8rem;
+  height: 2.1rem;
   width: auto;
   filter: grayscale(1);
   transition: filter var(--dur-base) var(--ease-smooth);
 }
-.brand-logo--aerolineas { height: 1.35rem; }
-.brand-logo--iberia { height: 1.35rem; }
-.brand-logo--latam { height: 1.45rem; }
-.brand-logo--jetsmart { height: 1.7rem; }
-.brand-logo--hertz { height: 1.6rem; }
-.brand-logo--riu { height: 2.3rem; }
-.brand-logo--emirates { height: 2.6rem; }
-.brand-logo--iberostar { height: 3.2rem; mix-blend-mode: multiply; }
+.brand-logo--aerolineas { height: 1.7rem; }
+.brand-logo--iberia { height: 1.65rem; }
+.brand-logo--latam { height: 1.8rem; }
+.brand-logo--jetsmart { height: 2rem; }
+.brand-logo--hertz { height: 1.9rem; }
+.brand-logo--riu { height: 2.7rem; }
+.brand-logo--emirates { height: 3rem; }
+.brand-logo--iberostar { height: 4.6rem; mix-blend-mode: multiply; }
 @media (hover: hover) {
   .brands-track li:hover .brand-logo { filter: grayscale(0); }
 }
 @media (max-width: 640px) {
-  .brand-logo { height: 1.5rem; }
-  .brand-logo--aerolineas, .brand-logo--iberia { height: 1.15rem; }
-  .brand-logo--latam { height: 1.2rem; }
-  .brand-logo--riu { height: 1.9rem; }
-  .brand-logo--emirates { height: 2.1rem; }
-  .brand-logo--iberostar { height: 2.6rem; }
+  .brand-logo { height: 1.7rem; }
+  .brand-logo--aerolineas, .brand-logo--iberia { height: 1.3rem; }
+  .brand-logo--latam { height: 1.4rem; }
+  .brand-logo--jetsmart { height: 1.6rem; }
+  .brand-logo--hertz { height: 1.5rem; }
+  .brand-logo--riu { height: 2.2rem; }
+  .brand-logo--emirates { height: 2.4rem; }
+  .brand-logo--iberostar { height: 3.8rem; }
 }
