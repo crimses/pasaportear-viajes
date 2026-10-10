@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://pasaportear.com/sitemap.xml
