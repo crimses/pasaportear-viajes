@@ -1563,6 +1563,8 @@ p:last-child { margin-bottom: 0; }
 .brand-logo--latam { height: calc(2.006rem * var(--bs)); margin: calc(-0.01rem * var(--bs)) calc(0rem * var(--bs)) calc(-0.01rem * var(--bs)) calc(0rem * var(--bs)); }
 .brand-logo--jetsmart { height: calc(1.993rem * var(--bs)); margin: calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)); }
 .brand-logo--hertz { height: calc(5.055rem * var(--bs)); margin: calc(-1.213rem * var(--bs)) calc(-2.018rem * var(--bs)) calc(-1.542rem * var(--bs)) calc(-1.944rem * var(--bs)); }
+.brand-logo--europamundo { height: calc(1.47rem * var(--bs)); margin: calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)); }
+.brand-logo--sandos { height: calc(2.9rem * var(--bs)); margin: calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)); }
 .brand-logo--iberostar { mix-blend-mode: multiply; }
 @media (hover: hover) {
   .brands-track li:hover .brand-logo { filter: grayscale(0); }
