@@ -831,6 +831,9 @@ p:last-child { margin-bottom: 0; }
 }
 
 .destinos-track {
+  width: max-content;
+  min-width: 100%;
+  box-sizing: border-box;
   display: flex;
   gap: var(--space-4);
   padding-block: 0.5rem var(--space-3);
@@ -1362,7 +1365,9 @@ p:last-child { margin-bottom: 0; }
 
   .visa__grid { grid-template-columns: 1fr; text-align: center; }
   .visa__lead { margin-inline: auto; }
-  .check-list { align-items: center; }
+  .check-list { align-items: flex-start; width: fit-content; max-width: 100%; margin-inline: auto; text-align: left; }
+  .check-list li { align-items: flex-start; }
+  .check-list i { margin-top: 0.15em; }
   .visa__media { order: -1; }
   .visa__icon { font-size: 8rem; }
   .visa__photo { width: min(320px, 80vw); max-width: 100%; transform: rotate(-6deg); }
@@ -1385,6 +1390,8 @@ p:last-child { margin-bottom: 0; }
   .destinos-head { flex-direction: column; align-items: flex-start; }
   .destinos-nav { display: none; }
   .destino-card { width: 78vw; height: 380px; }
+  .destinos-track { padding-right: 11vw; }
+  .destino-card:last-child { scroll-snap-align: center; }
   .guard-banner { flex-direction: column; text-align: center; }
   .hero__actions { flex-direction: column; }
   .hero__actions .btn { width: 100%; }
