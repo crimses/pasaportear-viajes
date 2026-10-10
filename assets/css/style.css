@@ -1540,34 +1540,29 @@ p:last-child { margin-bottom: 0; }
 .btn .icon-svg { font-size: 1.15em; }
 .contact-list .icon-svg { font-size: 1.4rem; color: var(--turquoise-dark); margin-top: 0.15em; }
 .site-footer__social .icon-svg { font-size: 1.1rem; }
-.site-footer__social .icon-fb { font-size: 1.27rem; }
 .site-footer__social a i { font-size: 1.33rem; }
 
-/* Logos de las marcas: apagados en gris y a color al pasar el mouse */
+/* Logos de las marcas: apagados en gris y a color al pasar el mouse.
+   Cada logo se escala segun su contenido visible (sin el aire vacio del archivo) para entrar en la
+   misma caja (max 2.3rem de alto x 8.5rem de ancho); --bs reduce todo en celular. */
+.brands { --bs: 1; }
 .brand-logo {
-  height: 2.1rem;
   width: auto;
   filter: grayscale(1);
   transition: filter var(--dur-base) var(--ease-smooth);
 }
-.brand-logo--aerolineas { height: 1.7rem; }
-.brand-logo--iberia { height: 1.65rem; }
-.brand-logo--latam { height: 1.8rem; }
-.brand-logo--jetsmart { height: 2rem; }
-.brand-logo--hertz { height: 1.9rem; }
-.brand-logo--riu { height: 2.7rem; }
-.brand-logo--emirates { height: 3rem; }
-.brand-logo--iberostar { height: 4.6rem; mix-blend-mode: multiply; }
+.brand-logo--aerolineas { height: calc(1.692rem * var(--bs)); margin: calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)); }
+.brand-logo--iberostar { height: calc(4.598rem * var(--bs)); margin: calc(-0.901rem * var(--bs)) calc(-1.446rem * var(--bs)) calc(-0.901rem * var(--bs)) calc(-1.469rem * var(--bs)); }
+.brand-logo--riu { height: calc(2.848rem * var(--bs)); margin: calc(-0.023rem * var(--bs)) calc(-0.024rem * var(--bs)) calc(-0.023rem * var(--bs)) calc(-0.024rem * var(--bs)); }
+.brand-logo--iberia { height: calc(1.87rem * var(--bs)); margin: calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)); }
+.brand-logo--emirates { height: calc(3.061rem * var(--bs)); margin: calc(-0.034rem * var(--bs)) calc(-0.031rem * var(--bs)) calc(-0.028rem * var(--bs)) calc(-0.031rem * var(--bs)); }
+.brand-logo--latam { height: calc(2.006rem * var(--bs)); margin: calc(-0.01rem * var(--bs)) calc(0rem * var(--bs)) calc(-0.01rem * var(--bs)) calc(0rem * var(--bs)); }
+.brand-logo--jetsmart { height: calc(1.993rem * var(--bs)); margin: calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)) calc(0rem * var(--bs)); }
+.brand-logo--hertz { height: calc(5.055rem * var(--bs)); margin: calc(-1.213rem * var(--bs)) calc(-2.018rem * var(--bs)) calc(-1.542rem * var(--bs)) calc(-1.944rem * var(--bs)); }
+.brand-logo--iberostar { mix-blend-mode: multiply; }
 @media (hover: hover) {
   .brands-track li:hover .brand-logo { filter: grayscale(0); }
 }
 @media (max-width: 640px) {
-  .brand-logo { height: 1.7rem; }
-  .brand-logo--aerolineas, .brand-logo--iberia { height: 1.3rem; }
-  .brand-logo--latam { height: 1.4rem; }
-  .brand-logo--jetsmart { height: 1.6rem; }
-  .brand-logo--hertz { height: 1.5rem; }
-  .brand-logo--riu { height: 2.2rem; }
-  .brand-logo--emirates { height: 2.4rem; }
-  .brand-logo--iberostar { height: 3.8rem; }
+  .brands { --bs: 0.78; }
 }

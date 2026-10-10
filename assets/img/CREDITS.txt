@@ -14,3 +14,4 @@ jetsmart.svg | File:Logo JetSmart.svg | Public domain (logo de texto) | https://
 hertz.svg | File:Hertz-Logo.svg | Public domain (logo de texto) | https://commons.wikimedia.org/wiki/File:Hertz-Logo.svg
 iberostar.jpg | File:IBEROSTAR New Logo.jpg | Author: Aldebaran1984 | License: CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:IBEROSTAR_New_Logo.jpg
 WhatsApp (icono SVG de contorno) | Simple Icons (simpleicons.org) | CC0
+Facebook (icono SVG) | Simple Icons (simpleicons.org) | CC0
