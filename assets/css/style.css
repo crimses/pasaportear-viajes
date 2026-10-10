@@ -467,7 +467,8 @@ p:last-child { margin-bottom: 0; }
   color: rgba(255, 255, 255, 0.85);
 }
 .hero__trust li { display: flex; align-items: center; gap: 0.4em; }
-.hero__trust i { color: var(--turquoise); font-size: 1.1em; }
+.hero__trust i,
+.hero__trust .icon-svg { color: var(--turquoise); font-size: 1.1em; }
 
 /* ==========================================================================
    About / Sobre mí
@@ -1536,5 +1537,33 @@ p:last-child { margin-bottom: 0; }
 
 /* Íconos en SVG (logos que no están en la fuente recortada) */
 .icon-svg { width: 1em; height: 1em; flex-shrink: 0; }
+.btn .icon-svg { font-size: 1.15em; }
 .contact-list .icon-svg { font-size: 1.4rem; color: var(--turquoise-dark); margin-top: 0.15em; }
 .site-footer__social .icon-svg { font-size: 1.1rem; }
+
+/* Logos de las marcas: apagados en gris y a color al pasar el mouse */
+.brand-logo {
+  height: 1.8rem;
+  width: auto;
+  filter: grayscale(1);
+  transition: filter var(--dur-base) var(--ease-smooth);
+}
+.brand-logo--aerolineas { height: 1.35rem; }
+.brand-logo--iberia { height: 1.35rem; }
+.brand-logo--latam { height: 1.45rem; }
+.brand-logo--jetsmart { height: 1.7rem; }
+.brand-logo--hertz { height: 1.6rem; }
+.brand-logo--riu { height: 2.3rem; }
+.brand-logo--emirates { height: 2.6rem; }
+.brand-logo--iberostar { height: 3.2rem; mix-blend-mode: multiply; }
+@media (hover: hover) {
+  .brands-track li:hover .brand-logo { filter: grayscale(0); }
+}
+@media (max-width: 640px) {
+  .brand-logo { height: 1.5rem; }
+  .brand-logo--aerolineas, .brand-logo--iberia { height: 1.15rem; }
+  .brand-logo--latam { height: 1.2rem; }
+  .brand-logo--riu { height: 1.9rem; }
+  .brand-logo--emirates { height: 2.1rem; }
+  .brand-logo--iberostar { height: 2.6rem; }
+}

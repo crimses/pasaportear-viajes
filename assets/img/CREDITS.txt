@@ -4,3 +4,13 @@ hero-bg-v2-1920.webp (y hero-bg-v2-960.webp) | Imagen provista directamente por 
 polaroid.webp | Imagen provista directamente por el cliente (POLAROID V2.png) | Sin atribucion externa requerida
 turcas-y-caicos.webp | Foto de Rosemary Media en Unsplash (rosemary-media-BDCJHWdKUUI-unsplash.jpg) | Licencia Unsplash, sin atribucion externa requerida
 visa-aprobada.svg | Ilustracion propia (specimen de visa con datos de relleno y sello APPROVED), creada para este sitio | Sin atribucion externa requerida
+Marcas (assets/img/marcas): logos obtenidos de Wikimedia Commons. Son marcas registradas de sus titulares; se muestran solo para indicar con quienes trabaja el sitio.
+aerolineas-argentinas.svg | File:Aerolíneas Argentinas.svg | Public domain (logo de texto) | https://commons.wikimedia.org/wiki/File:Aerol%C3%ADneas_Argentinas.svg
+riu.svg | File:RIU Hotels logo.svg | Public domain (logo de texto) | https://commons.wikimedia.org/wiki/File:RIU_Hotels_logo.svg
+iberia.svg | File:Logotipo de Iberia.svg | Public domain (logo de texto) | https://commons.wikimedia.org/wiki/File:Logotipo_de_Iberia.svg
+emirates.svg | File:Emirates logo.svg | Public domain (logo de texto) | https://commons.wikimedia.org/wiki/File:Emirates_logo.svg
+latam.svg | File:Latam-logo -v (Indigo).svg | Public domain (logo de texto) | https://commons.wikimedia.org/wiki/File:Latam-logo_-v_(Indigo).svg
+jetsmart.svg | File:Logo JetSmart.svg | Public domain (logo de texto) | https://commons.wikimedia.org/wiki/File:Logo_JetSmart.svg
+hertz.svg | File:Hertz-Logo.svg | Public domain (logo de texto) | https://commons.wikimedia.org/wiki/File:Hertz-Logo.svg
+iberostar.jpg | File:IBEROSTAR New Logo.jpg | Author: Aldebaran1984 | License: CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:IBEROSTAR_New_Logo.jpg
+WhatsApp (icono SVG de contorno) | Simple Icons (simpleicons.org) | CC0
